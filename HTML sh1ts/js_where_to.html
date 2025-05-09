@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- nandito yung title ng page mga hangal ito yun -->
+  <link rel="icon" type="image/png" href="assets/ib.png" > <title>JavaScript Where to</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" type="text/css" href="css/boostrap.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap JS -->
+  <script type="js/boostrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  /*
+    DEMO STYLE
+*/
+
+  @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+  }
+
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: black;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+  }
+
+  /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+  /*Makes the sidebar go left*/
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  .btn{
+    background-color: #212529;
+    color: white;
+  }
+  .btn:hover{
+    background-color:  #198754;
+    color:white;
+  }
+
+  /*The whole sidebar itself*/
+  #sidebar {
+    height: 100%;
+    background:   #212529;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  /*The reason why sidebar there*/
+  #sidebar.active {
+    margin-left: -250px;
+  }
+
+  /*sidebar yung header*/
+  #sidebar .sidebar-header {
+    text-align: center;
+    padding: 10px;
+    background: #212429;
+  }
+
+  /*<h2>*/
+  #sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+  }
+
+  /*<h2>*/
+  #sidebar ul p {
+    color: #fff;
+    padding: 10px;
+  }
+
+  /*The font of the content of the sidebar (limited only to list)*/
+  #sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  /*hover*/
+  #sidebar ul li a:hover {
+    color: white;
+    background: #198754;
+    transition: 0.5s;
+    letter-spacing: 1px;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #sidebar ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  /*Dropdown arrow*/
+  a[data-toggle="collapse"] {
+    position: relative;
+  }
+
+  .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background:   #212529;
+  }
+
+ 
+.nav-link:hover {
+color: black;
+}
+  /*The color of the download*/
+
+  /*the 2nd button*/
+  a.article,
+  a.article:hover {
+    background: #6d7fcc !important;
+    /*also the color of the text of the 2nd text*/
+    color: #fff !important;
+  }
+
+  /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+  #content {
+    width: 100%;
+    /*    padding: 20px;*/
+    min-height: 100vh;
+    transition: all 0.3s;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #content ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  #right {
+    float: right;
+  }
+
+  .tagcolor {
+    color: blue;
+    font-size: 20px;
+  }
+
+  .tagname {
+    color: red;
+    font-size: 20px;
+  }
+
+
+  /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+  /*The media object helps build complex and repetitive 
+components where some media is positioned alongside content 
+that doesn’t wrap around said media. Plus, it does this 
+with only two required classes thanks to flexbox.
+Oh gosh thank you! Ito pala yung kailangan ko*/
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -250px;
+    }
+
+    #sidebar.active {
+      margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <section id="sb">
+      <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+          <a href="../home.html"><h3 class="logo" style="font-family: Audiowide, sans-serif;">  ISTUDY<span
+            class="text-white">BUD</span></h2></a>
+        </div>
+
+        <ul class="list-unstyled components">
+          <i>
+            <p class="text-center ">Let us be your study buddy!</p>
+          </i>
+          <!-- JS LIST -->
+         <li class="">
+            <a href="#hIntro" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> JS TUTORIAL</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hIntro">
+            <!-- kita mo yang class="active"? lagay mo yan kung nasaan sila na page right now -->
+            </li>
+            <li>
+              <a href="js_introduction.html">JS Introduction</a>
+            </li>
+            <li class="active">
+              <a href="#">JS Where to</a>
+            </li>
+            <li class="">
+              <a href="js_output.html">JS Output</a>
+            </li>
+              <a href="js_comments.html">JS Comments</a>
+            </li>
+            <li class="">
+              <a href="js_variables.html">JS Variables</a>
+            </li>
+          </ul>
+          </li>
+          <li class="">
+            <a href="/js-quiz.html">JS QUIZ</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Sidebar -->
+    <!-- Page Content  -->
+
+    <div id="content">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow shadow-info shadow-intensity-lg">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn btn-info bg-success">
+            <span><i class="fa fa-bars"></i></span>
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto h4 ">
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML sh1ts/html_editors.html">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML sh1ts/css_introduction.html">CSS</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">JAVASCRIPT</a>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Page</a>
+                </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+<!-- Ito yung sinasabi ni Pat na back at next -->
+      <div class="card shadow border-black m-5">
+        <div> <a class="btn " href="js_introduction.html"><i class="fa-solid fa-arrow-left"></i>  BACK</a>
+          <a class="btn " href="js_output.html" id="right"><i class="fa-sharp fa-solid fa-arrow-right"></i>  NEXT</a>
+        </div>
+      </div>
+
+      <div id="content" class="p-4 p-md-5">
+        <br>
+        <div class="card shadow p-3">
+          <div class="card-body  ">
+            <dl class="row">
+              <dt class="h1 col-sm-3 mb-4">JavaScript Where To</dt>
+              <dd class="h4 col-sm-9">
+                <figure class="text-end">
+                  <blockquote class="blockquote">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    World's largest web developer site, <cite title="Source Title">w3schools</cite>
+                  </figcaption>
+                </figure>
+              </dd>
+          </div>
+        </div>
+        <br>
+
+        <div class="card shadow p-3 mt-5">
+          <div class="card-body  ">
+            <h2 class="mb-4"> The < script > Tag </script> </h2>
+            <p> One of many JavaScript HTML methods is <span class="tagcolor">
+              <</span><span class="tagname">script</span>
+                <span class="tagcolor">></span> and <span class="tagcolor">
+                  <</span><span class="tagname">/script</span>
+                    <span class="tagcolor">></span> tags. </p>
+            <p>The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript":</p>
+        <div class="card-body  ">
+            <div class="card-group p-4 p-md-3">
+              <div class="card">
+                <div class="card shadow p-3 bg-success ">
+                  <div class="card bg-dark text-white">
+                    <div class="card-header">
+                      <H2 class="text-LEFT">Example</H2>
+                    </div>
+                    </div>
+                    
+                  <div class="card-body bg-light">
+                    <span class="tagcolor">
+                      <</span><span class="tagname">script</span>
+                        <span class="tagcolor">></span>
+                             <p>document.getElementById(<span class="tagname">"demo"</span>).innerHTML = <span class="tagname">"My First JavaScript"</span>;</p>
+                             <span class="tagcolor">
+                              <</span><span class="tagname">/script</span>
+                                <span class="tagcolor">></span>
+                              </div>
+                              <a href="js_editor5.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                </div>
+              </div>
+            </div>
+        </div>
+          </div>
+        </div>
+            <p class="h3 bg-success-subtle"><strong>Note: Old JavaScript examples may use a type attribute: script type="text/javascript" . </strong></p>
+            <p class="h3 bg-success-subtle"><strong> The type attribute is not required. JavaScript is the default scripting language in HTML. </strong></p> 
+
+            <div class="card shadow p-3 mt-5">
+              <div class="card-body  ">
+                <h2 class="mb-4"> JavaScript Functions and Events </script> </h2>
+                <p> A JavaScript <span class="tagname"> function </span> is a block of JavaScript code, that can be executed when "called" for.</p>
+                <p> For example, a function can be called when an <strong> event</strong> occurs, like when the user clicks a button.</p>
+              </div>
+            </div>
+
+              <div class="card shadow p-3 mt-5">
+                <div class="card-body  ">
+                  <h2 class="mb-4"> JavaScript in < head > or < body > </script></h2>
+                  <p> You can place any number of scripts in an HTML document. </p>
+                  <p> Scripts can be placed in the <span class="tagcolor">
+                    <</span><span class="tagname">body</span>
+                      <span class="tagcolor">></span>, or in the <span class="tagcolor">
+                        <</span><span class="tagname">head</span>
+                          <span class="tagcolor">></span> section of an HTML page, or in both.</p>
+                          <br>
+                              <h2 class="mb-4"> JavaScript in < head > </script></h2>
+                              <p> In this example, a JavaScript <span class="tagname">function</span>
+                                is placed in the <span class="tagcolor">
+                                    <</span><span class="tagname">head</span>
+                                      <span class="tagcolor">></span> section of an HTML page.</p>
+                                      <p> The function is invoked (called) when a button is clicked: </p>
+                                      <div class="card-body  ">
+                                        <div class="card-group p-4 p-md-3">
+                                          <div class="card">
+                                            <div class="card shadow p-3 bg-success ">
+                                              <div class="card bg-dark text-white">
+                                                <div class="card-header">
+                                                  <H2 class="text-LEFT">Example</H2>
+                                                </div>
+                                                </div>
+                                                
+                                              <div class="card-body bg-light">
+                                                <span class="tagcolor">
+                                                  <</span><span class="tagname">!DOCTYPE html</span>
+                                                    <span class="tagcolor">></span>
+                                                    <br>
+                                                    <span class="tagcolor">
+                                                      <</span><span class="tagname">html</span>
+                                                        <span class="tagcolor">></span>
+                                                        <br>
+                                                        <span class="tagcolor">
+                                                          <</span><span class="tagname">head</span>
+                                                            <span class="tagcolor">></span>
+                                                            <br>
+                                                            <span class="tagcolor">
+                                                              <</span><span class="tagname">script</span>
+                                                                <span class="tagcolor">></span>
+                                                                <br>
+                                                                <span class="tagcolor">function</span> myFunction() {
+                                                                  <br>
+                                                         document.getElementById(<span class="tagname">"demo"</span>).innerHTML = <span class="tagname">"Paragraph changed"</span>;</p>
+                                                         {
+                                                          <br>
+                                                          <span class="tagcolor">
+                                                            <</span><span class="tagname">/head</span>
+                                                              <span class="tagcolor">></span>
+                                                              <br>
+                                                              <span class="tagcolor">
+                                                                <</span><span class="tagname">/script</span>
+                                                                  <span class="tagcolor">></span>
+                                                                  <br>
+                                                                  <span class="tagcolor">
+                                                                    <</span><span class="tagname">head</span>
+                                                                      <span class="tagcolor">></span>
+                                                                      <br>
+                                                                      <span class="tagcolor">
+                                                                        <</span><span class="tagname">body</span>
+                                                                          <span class="tagcolor">></span>
+                                                                          <br>
+
+                                                                          <p><span class="tagcolor">
+                                                                            <</span><span class="tagname">h2</span>
+                                                                              <span class="tagcolor">></span> Demo JavaScript in Head <span class="tagcolor">
+                                                                                <</span><span class="tagname">/h2</span>
+                                                                                  <span class="tagcolor">></span></p>
+                                                                                  <br>
+                                                                                  <p><span class="tagcolor">
+                                                                                    <<span class="tagname">p id</span>
+                                                                                    ="demo"><span class="tagcolor"></span></span> A Paragraph <span class="tagcolor">
+                                                                                      <</span><span class="tagname">/p</span>
+                                                                                        <span class="tagcolor">></span></p>
+                                                                                        <br>
+                                                                                                <span class="tagcolor">
+                                                                                                  <<span class="tagname">button type</span>
+                                                                                                  ="button"><span class="tagcolor">
+                                                                                                    <span class="tagcolor">
+                                                                                                      <span class="tagname">onclick</span>
+                                                                                                      "myFunction()"><span class="tagcolor"></span></span></span>
+                                                                                                      </span> Try it <span class="tagcolor">
+                                                                                                        <</span><span class="tagname">/button</span>
+                                                                                                          <span class="tagcolor">></span>
+                                                                                                          <br>
+
+                                                                                                          <span class="tagcolor">
+                                                                                                            <</span><span class="tagname">/body</span>
+                                                                                                              <span class="tagcolor">></span>
+                                                                                                              <br>
+                                                                                                              <span class="tagcolor">
+                                                                                                                <</span><span class="tagname">/html</span>
+                                                                                                                  <span class="tagcolor">></span>
+                                                                                                                    </div>
+                                                                                                                    <a href="js_editor6.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                </div>
+              </div>
+                                            <div class="card shadow p-3 mt-5">
+                                              <div class="card-body  ">
+                                                <h2 class="mb-4"> JavaScript in < body > </script></h2>
+                                                <p> In this example, a JavaScript <span class="tagname"> function </span> is placed in the <span class="tagcolor">
+                                                  <</span><span class="tagname">body</span><span class="tagcolor">></span> section of an HTML page. </p>
+                                                  <p> The function is invoked (called) when a button is clicked: </p>
+                                                        <br>
+                                                        <div class="card-body  ">
+                                                          <div class="card-group p-4 p-md-3">
+                                                            <div class="card">
+                                                              <div class="card shadow p-3 bg-success ">
+                                                                <div class="card bg-dark text-white">
+                                                                  <div class="card-header">
+                                                                    <H2 class="text-LEFT">Example</H2>
+                                                                  </div>
+                                                                  </div>
+                                                                  
+                                                                <div class="card-body bg-light">
+                                                                  <span class="tagcolor">
+                                                                    <</span><span class="tagname">!DOCTYPE html</span>
+                                                                      <span class="tagcolor">></span>
+                                                                      <br>
+                                                                      <span class="tagcolor">
+                                                                        <</span><span class="tagname">html</span>
+                                                                          <span class="tagcolor">></span>
+                                                                          <br>
+                                                                          <span class="tagcolor">
+                                                                            <</span><span class="tagname">body</span>
+                                                                              <span class="tagcolor">></span>
+                                                                              <br>
+                                                                              <p><span class="tagcolor">
+                                                                                <</span><span class="tagname">h2</span>
+                                                                                  <span class="tagcolor">></span> Demo JavaScript in Body <span class="tagcolor">
+                                                                                    <</span><span class="tagname">/h2</span>
+                                                                                      <span class="tagcolor">></span></p>
+                                                                                      <br>
+                                                                                      <p><span class="tagcolor">
+                                                                                        <<span class="tagname">p id</span>
+                                                                                        ="demo"><span class="tagcolor"></span></span> A Paragraph <span class="tagcolor">
+                                                                                          <</span><span class="tagname">/p</span>
+                                                                                            <span class="tagcolor">></span></p>
+                                                                                            <br>
+
+                                                                                            <span class="tagcolor">
+                                                                                              <<span class="tagname">button type</span>
+                                                                                              ="button"><span class="tagcolor">
+                                                                                                <span class="tagcolor">
+                                                                                                  <span class="tagname">onclick</span>
+                                                                                                  "myFunction()"><span class="tagcolor"></span></span></span>
+                                                                                                  </span> Try it <span class="tagcolor">
+                                                                                                    <</span><span class="tagname">/button</span>
+                                                                                                      <span class="tagcolor">></span>
+                                                                                                      <br>
+                                                                                                      <br>
+                                                                                                      <span class="tagcolor">
+                                                                                                        <</span><span class="tagname">script</span>
+                                                                                                          <span class="tagcolor">></span>
+                                                                                                          <br>
+                                                                                                          <span class="tagcolor">function</span> myFunction() {
+                                                                                                            <br>
+                                                                                                   document.getElementById(<span class="tagname">"demo"</span>).innerHTML = <span class="tagname">"Paragraph changed"</span>;</p>
+                                                                                                   {
+                                                                                                    <br>
+                                                                                                    <span class="tagcolor">
+                                                                                                      <</span><span class="tagname">/script</span>
+                                                                                                        <span class="tagcolor">></span>
+                                                                                                         <br>
+                                                                                                        <br>
+
+                                                                                                        <span class="tagcolor">
+                                                                                                          <</span><span class="tagname">/body</span>
+                                                                                                            <span class="tagcolor">></span>
+                                                                                                            <br>
+                                                                                                            <span class="tagcolor">
+                                                                                                              <</span><span class="tagname">/html</span>
+                                                                                                                <span class="tagcolor">></span>
+                                                                                                              </div>
+                                                                                                              <a href="js_editor7.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                              </div>
+                                                            </div>
+                                                                                                              <p class="h3 bg-success-subtle"><strong>Note: Placing scripts at the bottom of the < body > element improves the 
+                                                                                                                display speed, because script interpretation slows down the display.</strong></p>
+                                                          </div>
+                                                        </div>
+                                              </div>
+                                            </div>
+                                            
+                                                                                                                <div class="card shadow p-3 mt-5">
+                                                                                                                  <div class="card-body  ">
+                                                                                                                    <h2 class="mb-4"> External JavaScript </h2>
+                                                                                                                    <p> Scripts can also be placed in external files: </p>
+                                                                                                                <div class="card-body  ">
+                                                                                                                    <div class="card-group p-4 p-md-3">
+                                                                                                                      <div class="card">
+                                                                                                                        <div class="card shadow p-3 bg-success ">
+                                                                                                                          <div class="card bg-dark text-white">
+                                                                                                                            <div class="card-header">
+                                                                                                                              <H2 class="text-LEFT">External file: myScript.js</H2>
+                                                                                                                            </div>
+                                                                                                                            </div>
+                                                                                                                            
+                                                                                                                          <div class="card-body bg-light">
+                                                                                                                            <span class="tagcolor">function</span> myFunction() {
+                                                                                                                              <br>
+                                                                                                                     document.getElementById(<span class="tagname">"demo"</span>).innerHTML = <span class="tagname">"Paragraph changed"</span>;</p>
+                                                                                                                     {
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                          <p> External scripts are practical when the same code is used in many different web pages. </p>
+                                                                                                                          <p> JavaScript files have the file extension <strong>.js </strong></p>
+                                                                                                                          <p> To use an external script, put the name of the script file in the <span class="tagname">src</span> (source) attribute of a
+                                                                                                                            <span class="tagcolor">
+                                                                                                                              <</span><span class="tagname">script</span>
+                                                                                                                                <span class="tagcolor">></span> tag: </p>
+
+                                                                                                                                <div class="card-body  ">
+                                                                                                                                  <div class="card-group p-4 p-md-3">
+                                                                                                                                    <div class="card">
+                                                                                                                                      <div class="card shadow p-3 bg-success ">
+                                                                                                                                        <div class="card bg-dark text-white">
+                                                                                                                                          <div class="card-header">
+                                                                                                                                            <H2 class="text-LEFT">Example</H2>
+                                                                                                                                          </div>
+                                                                                                                                          </div>
+                                                                                                                                          
+                                                                                                                                        <div class="card-body bg-light">
+                                                                                                                                          <span class="tagcolor">
+                                                                                                                                            <<span class="tagname">script src</span>
+                                                                                                                                            ="myScript.js"><span class="tagcolor"></span><span class="tagcolor"><</span><span class="tagname">/script</span>
+                                                                                                                                                <span class="tagcolor">></span>
+                                                                                                                                              </div>
+                                                                                                                                              <a href="js_editor8.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                                                              </div>
+                                                                                                                                              </div>
+                                                                                                                                              </div>
+                                                                                                                                              <br>
+                                                                                                                                              <p> You can place an external script reference in <span class="tagcolor">
+                                                                                                                                                <</span><span class="tagname">head</span>
+                                                                                                                                                  <span class="tagcolor">></span> or <span class="tagcolor">
+                                                                                                                                                    <</span><span class="tagname">body</span>
+                                                                                                                                                      <span class="tagcolor">></span> as you like.</p>
+                                                                                                                                                      <p> The script will behave as if it was located exactly where the <span class="tagcolor">
+                                                                                                                                                        <</span><span class="tagname">script</span>
+                                                                                                                                                          <span class="tagcolor">></span> tag is located.</p>
+                                                                                                                                                          </div>
+
+                                                                                                                                                          <p class="h3 bg-success-subtle"><strong>Note: External scripts cannot contain 
+                                                                                                                                                            <span class="tagcolor">
+                                                                                                                                                              <</span><span class="tagname">script</span><span class="tagcolor">></span>
+                                                                                                                                                          </strong> tags.</p>
+                                                                                                                                                          </div>
+                                                                                                                                                          </div>
+                                                                                                                                                          </div>
+
+                                                                                                                                                          <div class="card shadow p-3 mt-5">
+                                                                                                                                                            <div class="card-body  ">
+                                                                                                                                                              <h2 class="mb-4"> External JavaScript Advantages </h2>
+                                                                                                                                                              <p> Placing scripts in external files has some advantages: </p>
+                                                                                                                                                              <ul>
+                                                                                                                                                                <li> It separates HTML and code </li>
+                                                                                                                                                                <li> It makes HTML and JavaScript easier to read and maintain </li>
+                                                                                                                                                                <li> Cached JavaScript files can speed up page loads </li>
+                                                                                                                                                              </ul>
+                                                                                                                                                              <p> To add several script files to one page  - use several script tags:</p>
+                                                                                                                                                          <div class="card-body  ">
+                                                                                                                                                              <div class="card-group p-4 p-md-3">
+                                                                                                                                                                <div class="card">
+                                                                                                                                                                  <div class="card shadow p-3 bg-success ">
+                                                                                                                                                                    <div class="card bg-dark text-white">
+                                                                                                                                                                      <div class="card-header">
+                                                                                                                                                                        <H2 class="text-LEFT">Example</H2>
+                                                                                                                                                                        </div>
+                                                                                                                                                                        </div>
+                                                                                                                                                                        <div class="card-body bg-light">
+                                                                                                                                                                        <span class="tagcolor">
+                                                                                                                                                                          <<span class="tagname">script src</span>
+                                                                                                                                                                          ="myScript1.js"><span class="tagcolor"></span><span class="tagcolor"><</span><span class="tagname">/script</span>
+                                                                                                                                                                              <span class="tagcolor">></span>
+                                                                                                                                                                              <br>
+                                                                                                                                                                              <span class="tagcolor">
+                                                                                                                                                                                <<span class="tagname">script src</span>
+                                                                                                                                                                                ="myScript2.js"><span class="tagcolor"></span><span class="tagcolor"><</span><span class="tagname">/script</span>
+                                                                                                                                                                                    <span class="tagcolor">></span>
+                                                                                                                                                                              </div>
+                                                                                                                                                                      </div>
+                                                                                                                                                                      </div>
+                                                                                                                                                                      </div>
+                                                                                                                                                                      </div>
+                                                                                                                                                                      </div>
+                                                                                                                                                                      </div>
+
+                                                                                                                                                                      <div class="card shadow p-3 mt-5">
+                                                                                                                                                                        <div class="card-body  ">
+                                                                                                                                                                          <h2 class="mb-4"> External References </h2>
+                                                                                                                                                                          <p> An external script can be referenced in 3 different ways: </p>
+                                                                                                                                                                          <ul>
+                                                                                                                                                                            <li> With a full URL (a full web address) </li>
+                                                                                                                                                                            <li> With a file path (like /js/) </li>
+                                                                                                                                                                            <li> Without any path </li>
+                                                                                                                                                                          </ul>
+                                                                                                                                                                          <p> This example uses a <strong> full URL </strong> to link to myScript.js:</p>
+                                                                                                                                                                      <div class="card-body  ">
+                                                                                                                                                                          <div class="card-group p-4 p-md-3">
+                                                                                                                                                                            <div class="card">
+                                                                                                                                                                              <div class="card shadow p-3 bg-success ">
+                                                                                                                                                                                <div class="card bg-dark text-white">
+                                                                                                                                                                                  <div class="card-header">
+                                                                                                                                                                                    <H2 class="text-LEFT">Example</H2>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                    <div class="card-body bg-light">
+                                                                                                                                                                                          <span class="tagcolor">
+                                                                                                                                                                                            <<span class="tagname">script src</span>
+                                                                                                                                                                                            ="https://www.w3schools.com/js/myScript.js"><span class="tagcolor"></span><span class="tagcolor"><</span><span class="tagname">/script</span>
+                                                                                                                                                                                                <span class="tagcolor">></span>
+                                                                                                                                                                                              </div>
+                                                                                                                                                                                              <a href="js_editor9.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                                                                                                              </div>
+                                                                                                                                                                                              </div>
+                                                                                                                                                                                              </div>
+                                                                                                                                                                                              <br>
+                                                                                                                                                                                              <p> This example uses a <strong> file path </strong> to link to myScript.js: </p>
+
+                                                                                                                                                                                              <div class="card-body  ">
+                                                                                                                                                                                                <div class="card-group p-4 p-md-3">
+                                                                                                                                                                                                  <div class="card">
+                                                                                                                                                                                                    <div class="card shadow p-3 bg-success ">
+                                                                                                                                                                                                      <div class="card bg-dark text-white">
+                                                                                                                                                                                                        <div class="card-header">
+                                                                                                                                                                                                          <H2 class="text-LEFT">Example</H2>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                          <div class="card-body bg-light">
+                                                                                                                                                                                                                <span class="tagcolor">
+                                                                                                                                                                                                                  <<span class="tagname">script src</span>
+                                                                                                                                                                                                                  ="/js/myScript.js"><span class="tagcolor"></span><span class="tagcolor"><</span><span class="tagname">/script</span>
+                                                                                                                                                                                                                      <span class="tagcolor">></span>
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                    <a href="js_editor10.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <br>
+
+                                                                                                                                                                                                                <p> This example uses no path to link to myScript.js: </p>
+                                                                                                                                                                                                                <div class="card-body  ">
+                                                                                                                                                                                                                  <div class="card-group p-4 p-md-3">
+                                                                                                                                                                                                                    <div class="card">
+                                                                                                                                                                                                                      <div class="card shadow p-3 bg-success ">
+                                                                                                                                                                                                                        <div class="card bg-dark text-white">
+                                                                                                                                                                                                                          <div class="card-header">
+                                                                                                                                                                                                                            <H2 class="text-LEFT">Example</H2>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div class="card-body bg-light">
+                                                                                                                                                                                                                                  <span class="tagcolor">
+                                                                                                                                                                                                                                    <<span class="tagname">script src</span>
+                                                                                                                                                                                                                                    ="myScript.js"><span class="tagcolor"></span><span class="tagcolor"><</span><span class="tagname">/script</span>
+                                                                                                                                                                                                                                        <span class="tagcolor">></span>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      <a href="js_editor11.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                      </div>                                                                                                                                                                                 <br>
+                                                    <a href="#" class="btn">Click me to Climb Up!</a>
+      <script>
+        $(document).ready(function () {
+          $("#sidebarCollapse").on("click", function () {
+            $("#sidebar").toggleClass("active");
+          });
+        });
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- nandito yung title ng page mga hangal ito yun -->
+  <link rel="icon" type="image/png" href="assets/ib.png" > <title>HTML Form Elements</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" type="text/css" href="css/boostrap.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap JS -->
+  <script type="js/boostrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  /*
+    DEMO STYLE
+*/
+
+  @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+  }
+
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: black;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+  }
+
+  /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+  /*Makes the sidebar go left*/
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  .btn{
+    background-color: #212529;
+    color: white;
+  }
+  .btn:hover{
+    background-color:  #198754;
+    color:white;
+  }
+
+  /*The whole sidebar itself*/
+  #sidebar {
+    height: 100%;
+    background:   #212529;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  /*The reason why sidebar there*/
+  #sidebar.active {
+    margin-left: -250px;
+  }
+
+  /*sidebar yung header*/
+  #sidebar .sidebar-header {
+    text-align: center;
+    padding: 10px;
+    background: #212429;
+  }
+
+  /*<h2>*/
+  #sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+  }
+
+  /*<h2>*/
+  #sidebar ul p {
+    color: #fff;
+    padding: 10px;
+  }
+
+  /*The font of the content of the sidebar (limited only to list)*/
+  #sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  /*hover*/
+  #sidebar ul li a:hover {
+    color: white;
+    background: #198754;
+    transition: 0.5s;
+    letter-spacing: 1px;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #sidebar ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  /*Dropdown arrow*/
+  a[data-toggle="collapse"] {
+    position: relative;
+  }
+
+  .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background:   #212529;
+  }
+
+ 
+.nav-link:hover {
+color: black;
+}
+  /*The color of the download*/
+
+  /*the 2nd button*/
+  a.article,
+  a.article:hover {
+    background: #6d7fcc !important;
+    /*also the color of the text of the 2nd text*/
+    color: #fff !important;
+  }
+
+  /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+  #content {
+    width: 100%;
+    /*    padding: 20px;*/
+    min-height: 100vh;
+    transition: all 0.3s;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #content ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  #right {
+    float: right;
+  }
+
+  .tagcolor {
+    color: blue;
+    font-size: 20px;
+  }
+
+  .tagname {
+    color: red;
+    font-size: 20px;
+  }
+
+
+  /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+  /*The media object helps build complex and repetitive 
+components where some media is positioned alongside content 
+that doesn’t wrap around said media. Plus, it does this 
+with only two required classes thanks to flexbox.
+Oh gosh thank you! Ito pala yung kailangan ko*/
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -250px;
+    }
+
+    #sidebar.active {
+      margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <section id="sb">
+      <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+          <a href="../home.html"><h3 class="logo" style="font-family: Audiowide, sans-serif;">  ISTUDY<span
+            class="text-white">BUD</span></h2></a>
+        </div>
+
+        <ul class="list-unstyled components">
+          <i>
+            <p class="text-center ">Let us be your study buddy!</p>
+          </i>
+          <li class="">
+            <!-- Accessible Rich Internet Applications (ARIA) - more accessible to people with disabilities. -->
+            <a href="#"></i> HTML TUTORIAL</a>
+          </li>
+ <!-- HTML Introduction -->
+ <!-- kita mo yang class="active"? lagay mo yan kung anong part sila, intro or forms, or media. tanggalin pag hindi sila nandun -->
+          <li>
+            <a href="#hIntro" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> HTML INTRO</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hIntro">
+            <!-- kita mo yang class="active"? lagay mo yan kung nasaan sila na page right now -->
+            <li class="">
+              <!-- Nandito yung papalitan mo yung content ng href -->
+              <a href="html_editors.html">HTML Editors</a>
+            </li>
+            <li class="">
+              <a href="html_basic.html">HTML Basic</a>
+            </li>
+            <li>
+              <a href="html_elements.html">HTML Elements</a>
+            </li>
+            <li>
+              <a href="html_attributes.html">HTML Attributes</a>
+            </li>
+            <li>
+              <a href="html_headings.html">HTML Headings</a>
+            </li>
+            <li class="">
+              <a href="html_paragraphs.html">HTML Paragraphs</a>
+            </li>
+            <li class="">
+              <a href="html_styles.html">HTML Styles</a>
+            </li>
+            <li>
+              <a href="html_formatting.html">HTML Formatting</a>
+            </li>
+            <li>
+              <a href="html_quotations.html">HTML Quotations</a>
+            </li>
+            <li>
+              <a href="html_comments.html">HTML Comments</a>
+            </li>
+            <li>
+              <a href="html_colors.html">HTML Colors</a>
+            </li>
+            <li>
+              <a href="html_css.html">HTML CSS</a>
+            </li>
+            <li>
+              <a href="html_links.html">HTML Links</a>
+            </li>
+            <li>
+              <a href="html_images.html">HTML Images</a>
+            </li>
+            <li>
+              <a href="html_page_title.html">HTML Page Title</a>
+            </li>
+            <li>
+              <a href="html_tables.html">HTML Tables</a>
+            </li>
+            <li>
+              <a href="html_lists.html">HTML Lists</a>
+            </li>
+            <li>
+              <a href="html_block_&_inline.html">HTML Block & Inline</a>
+            </li>
+            <li>
+              <a href="html_iframes.html">HTML Iframes</a>
+            </li>
+          </ul>
+          </li>
+<!-- HTML Forms -->
+          <li class="active">   
+            <a href="#hForms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> HTML FORMS</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hForms">
+            <li>
+              <a href="html_forms.html">HTML Forms</a>
+            </li>
+            <li>
+              <a href="html_form_attributes.html">HTML Form Attributes</a>
+            </li>
+            <li class="active">
+              <a href="#">HTML Form Elements</a>
+            </li>
+            <li>
+              <a href="html_input_types.html">HTML Input Types</a>
+            </li>
+            <li>
+              <a href="html_input_attributes.html">HTML Input Attributes</a>
+            </li>
+          </ul>
+          </li>
+<!-- HTML MEDIA -->
+          <li>
+            <a href="#hMedia" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> HTML MEDIA</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hMedia">
+            <li>
+              <a href="html_media.html">HTML Media</a>
+            </li>
+            <li>
+              <a href="html_video.html">HTML Video</a>
+            </li>
+            <li>
+              <a href="html_audio.html">HTML Audio</a>
+            </li>
+            <li>
+              <a href="html_youtube.html">HTML Youtube</a>
+            </li>
+          </ul>
+          </li>
+
+          <li>
+            <a href="/html-quiz.html">HTML QUIZ</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Sidebar -->
+    <!-- Page Content  -->
+
+    <div id="content">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow shadow-info shadow-intensity-lg">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn btn-info bg-success">
+            <span><i class="fa fa-bars"></i></span>
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto h4 ">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="css_introduction.html">CSS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="js_introduction.html">JAVASCRIPT</a>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Page</a>
+                </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="card shadow border-black m-5">
+        <div> <a class="btn " href="html_form_attributes.html"><i class="fa-solid fa-arrow-left"></i>  BACK</a>
+          <a class="btn " href="html_input_types.html" id="right"><i class="fa-sharp fa-solid fa-arrow-right"></i>  NEXT</a>
+        </div>
+      </div>
+
+      <div id="content" class="p-4 p-md-5">
+        
+        <div class="card shadow p-3">
+          <div class="card-body  ">
+            <dl class="row">
+              <dt class="h1 col-sm-3 mb-4">HTML Form Elements</dt>
+              <dd class="h4 col-sm-9">
+                <p class="lead text-justify">
+                    This chapter describes all the different HTML form elements. </p>
+                                <figure class="text-end">
+                  <blockquote class="blockquote">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    World's largest web developer site, <cite title="Source Title">w3schools</cite>
+                  </figcaption>
+                </figure>
+              </dd>
+          </div>
+        </div>
+        <br>
+
+        <div class="card shadow p-3 mt-5">
+            <div class="card-body  ">
+              <h2>The HTML < form > Elements</h2>
+          <div class="card-body  ">
+            <p>The HTML <span class="tagcolor">
+          <<span class="tagname">form</span>>
+        </span>
+        element can contain one or more of the following form elements:
+        </p>
+        <ul>
+            <li><span class="tagcolor"><<span class="tagname">input</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">label</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">select</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">textera</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">button</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">fieldset</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">legend</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">datalist</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">output</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">option</span>></li>
+            <li><span class="tagcolor"><<span class="tagname">optgroup</span>></li>
+          </ul>  
+          </div>
+            </div>
+          </div>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The < input > Element</h2>
+                  <p>One of the most used form element is the 
+                    <span class="tagname">input</span> element </p>
+                    <p> The <span class="tagname"> input </span> element can be displayed in several ways, depending on the 
+                        <span class="tagname"> type </span> attribute. </p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+
+                        <span class="tagcolor">
+                          <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                         <br>
+                         <span class="tagcolor">
+                          <<span class="tagname">input type</span>
+                         ="text"<span class="tagcolor"></span>
+                         <span class="tagname">id</span>
+                         <span class="tagcolor">="fname"</span>  
+                         <span class="tagname">name</span>
+                         <span class="tagcolor">="fname"</span> 
+                         </div>
+                          <a href="html_form13_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                        </div>
+                      </div>
+                  </div>
+          </div>
+          <br>
+          
+          <div class="card shadow p-3 mt-5">
+            <div class="card-body  ">
+              <h2>The < label > Element</h2>
+          <div class="card-body  ">
+            <p>The <span class="tagcolor">
+          <<span class="tagname">label</span>>
+        </span>
+        element defines a label for several form elements.</p>
+        <p>The <span class="tagcolor">
+            <<span class="tagname">label</span>>
+          </span>
+          element is useful for screen-reader users, because the screen-reader 
+          will read out loud the label when the user focus on the input element.</p>
+          <p>The <span class="tagcolor">
+            <<span class="tagname">label</span>>
+          </span>
+          element also help users who have difficulty clicking on very small regions 
+          (such as radio buttons or checkboxes) - because when the user clicks the text within the <span class="tagcolor">
+          <<span class="tagname">label</span>>
+        </span>element, it toggles the radio button/checkbox.</p>
+        <p>The <span class="tagname">for</span>
+            attribute of the <span class="tagcolor">
+                <<span class="tagname">label</span>> 
+            </span> tag should be equal to the <span class="tagname">id</span> attribute of the
+            <span class="tagcolor">
+                <<span class="tagname">input</span>> 
+            </span> element to bind them together.</p>
+          </div>
+            </div>
+          </div>
+          <br>
+
+            <div class="container-fluid shadow p-3">
+                <h2>The < select > Element</h2>
+                      <p>The <span class="tagcolor">
+                        <<span class="tagname">select</span>> 
+                    </span> element defines a drop-down list:</p>
+                      <div class="card-group p-4 p-md-3">
+                        <div class="card">
+                          <div class="card shadow p-3 bg-success ">
+                            <div class="card bg-dark text-white">
+                              <div class="card-header">
+                                <H2 class="text-LEFT">Example</H2>
+                              </div>
+                              </div>
+                              
+                            <div class="card-body bg-light">
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                              ="cars"<span class="tagcolor">></span> 
+                            </span> Choose a car: <span class="tagcolor">
+                             <</span><span class="tagname">/label</span><span class="tagcolor">></span>
+                             <br>
+
+                             </div>
+                              <a href="html_form14_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                            </div>
+                          </div>
+                      </div>
+                      <br>
+                      <p>The <span class="tagcolor">
+                        <<span class="tagname">option</span>> 
+                    </span> elements defines an option that can be selected.</p>
+                    <p>By default, the first item in the drop-down list is selected.</p>
+                    <p>To define a pre-selected option, add the
+                        <span class="tagname">selected</span> attribute to the option:</p>
+
+                        <div class="card-group p-4 p-md-3">
+                            <div class="card">
+                              <div class="card shadow p-3 bg-success ">
+                                <div class="card bg-dark text-white">
+                                  <div class="card-header">
+                                    <H2 class="text-LEFT">Example</H2>
+                                  </div>
+                                  </div>
+                                  
+                                <div class="card-body bg-light">
+
+                                  <span class="tagcolor">
+                                    <<span class="tagname">option value</span>
+                                    ="fiat"<span class="tagcolor"></span> 
+                                    <span class="tagname">selected</span>
+                                  </span> Fiat <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                  
+
+                                 </div>
+                                  <a href="html_form15_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                              </div>
+                            </div>
+                        </div>
+            </div>
+            <br>
+
+
+                                  <div class="container-fluid shadow p-3">
+                                    <h2>Visible Values:</h2>
+                                          <p>Use the 
+                                            <span class="tagname">size</span>
+                                            attribute to specify the number of visible values:</p>
+                                          <div class="card-group p-4 p-md-3">
+                                            <div class="card">
+                                              <div class="card shadow p-3 bg-success ">
+                                                <div class="card bg-dark text-white">
+                                                  <div class="card-header">
+                                                    <H2 class="text-LEFT">Example</H2>
+                                                  </div>
+                                                  </div>
+                                                  
+                                                <div class="card-body bg-light">
+
+                                                  <span class="tagcolor">
+                                                    <<span class="tagname">label for</span>
+                                                    ="cars"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Choose a car: 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/label</span><span class="tagcolor">></span>
+                                                  <br>
+
+                                                  <span class="tagcolor">
+                                                    <<span class="tagname">select id</span>
+                                                   ="cars"<span class="tagcolor"></span>
+                                                   <span class="tagname">name</span>
+                                                   <span class="tagcolor">="cars"</span>  
+                                                   <span class="tagname">size</span>
+                                                   <span class="tagcolor">="3"></span>
+                                                   <br>
+
+                                                  
+                                                    <<span class="tagname">option value</span>
+                                                    ="volvo"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Volvo 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                   <br>
+
+                                                   <span class="tagcolor">
+                                                   <<span class="tagname">option value</span>
+                                                    ="saab"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Saab 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                   <br>
+
+                                                   <span class="tagcolor">
+                                                   <<span class="tagname">option value</span>
+                                                    ="fiat"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Fiat 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                   <br>
+
+                                                   <span class="tagcolor">
+                                                   <<span class="tagname">option value</span>
+                                                    ="audi"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Audi 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                   <br>
+                                                   <br>
+
+                                                   <span class="tagcolor">
+                                                    <</span><span class="tagname">/select</span>
+                                                      <span class="tagcolor">></span>
+
+
+
+                                                 </div>
+                                                  <a href="html_form16_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                  </div>
+                                  <br>
+
+                                                  <div class="container-fluid shadow p-3">
+                                                    <h2>Allow Multiple Selections:</h2>
+                                                          <p>Use the 
+                                                            <span class="tagname">multiple</span>
+                                                            attribute to allow the user to select more than one value:</p>
+                                                          <div class="card-group p-4 p-md-3">
+                                                            <div class="card">
+                                                              <div class="card shadow p-3 bg-success ">
+                                                                <div class="card bg-dark text-white">
+                                                                  <div class="card-header">
+                                                                    <H2 class="text-LEFT">Example</H2>
+                                                                  </div>
+                                                                  </div>
+                                                                  
+                                                                <div class="card-body bg-light">
+                                                                  <span class="tagcolor">
+                                                                    <<span class="tagname">label for</span>
+                                                                    ="cars"<span class="tagcolor"></span> 
+                                                                    ><span class="tagname"></span></span> Choose a car: 
+                                                                   <span class="tagcolor"><</span></span><span class="tagname">/label</span><span class="tagcolor">></span>
+                                                                  <br>
+                
+                                                                  <span class="tagcolor">
+                                                                    <<span class="tagname">select id</span>
+                                                                   ="cars"<span class="tagcolor"></span>
+                                                                   <span class="tagname">name</span>
+                                                                   <span class="tagcolor">="cars"</span>  
+                                                                   <span class="tagname">size</span>
+                                                                   <span class="tagcolor">="4"</span>
+                                                                   <span class="tagname">multiple></span>
+                                                                   <br>
+                
+                                                                  
+                                                                    <<span class="tagname">option value</span>
+                                                                    ="volvo"<span class="tagcolor"></span> 
+                                                                    ><span class="tagname"></span></span> Volvo 
+                                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                                   <br>
+
+                                                                   <span class="tagcolor">
+                                                                   <<span class="tagname">option value</span>
+                                                    ="saab"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Saab 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                   <br>
+
+                                                   <span class="tagcolor">
+                                                   <<span class="tagname">option value</span>
+                                                    ="fiat"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Fiat 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                   <br>
+
+                                                   <span class="tagcolor">
+                                                   <<span class="tagname">option value</span>
+                                                    ="audi"<span class="tagcolor"></span> 
+                                                    ><span class="tagname"></span></span> Audi 
+                                                   <span class="tagcolor"><</span></span><span class="tagname">/option</span><span class="tagcolor">></span>
+                                                   <br>
+                                                   <br>   
+                                                                   <span class="tagcolor">
+                                                                    <</span><span class="tagname">/select</span>
+                                                                      <span class="tagcolor">></span>
+                                                                 </div>
+                                                                  <a href="html_form17_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                  </div>
+
+                                                  <div class="container-fluid shadow p-3">
+                                                    <h2>The < textarea > Element</h2>
+                                                          <p>The <span class="tagcolor">
+                                                            <<span class="tagname">textera</span>> 
+                                                        </span> element defines a multi-line input field (a text area):</p>
+                                                          <div class="card-group p-4 p-md-3">
+                                                            <div class="card">
+                                                              <div class="card shadow p-3 bg-success ">
+                                                                <div class="card bg-dark text-white">
+                                                                  <div class="card-header">
+                                                                    <H2 class="text-LEFT">Example</H2>
+                                                                  </div>
+                                                                  </div>
+                                                                  
+                                                                <div class="card-body bg-light">
+
+                                                                  <span class="tagcolor">
+                                                                    <<span class="tagname">textarea name</span>
+                                                                   ="message"<span class="tagcolor"></span>
+                                                                   <span class="tagname">rows</span>
+                                                                   <span class="tagcolor">="10"</span>  
+                                                                   <span class="tagname">cols</span>
+                                                                   <span class="tagcolor">="30"</span> 
+                                                                   <span class="tagcolor">></span>
+                                                                   <p>The cat was playing in the garden.</p>
+                                                                   <span class="tagcolor">
+                                                                    <</span><span class="tagname">/textarea</span>
+                                                                      <span class="tagcolor">></span>
+                                                                 </div>
+                                                                  <a href="html_form18_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <p>The <span class="tagname">rows</span> attribute specifies the visible 
+                                                            number of lines in a text area.</p>
+                                                            <p>The <span class="tagname">cols</span> attribute specifies the visible width of a text area.</p>
+                                                            <br>
+                                                            <p>You can also define the size of the text area by using CSS:</p>
+
+                                                            <div class="card-group p-4 p-md-3">
+                                                              <div class="card">
+                                                                <div class="card shadow p-3 bg-success ">
+                                                                  <div class="card bg-dark text-white">
+                                                                    <div class="card-header">
+                                                                      <H2 class="text-LEFT">Example</H2>
+                                                                    </div>
+                                                                    </div>
+                                                                    
+                                                                  <div class="card-body bg-light">
+                                                                    <span class="tagcolor">
+                                                                      <<span class="tagname">textarea name</span>
+                                                                     ="message"<span class="tagcolor"></span>
+                                                                     <span class="tagname">style</span>
+                                                                     <span class="tagcolor">="width:200px;  height:600px;"</span>  
+                                                                     <span class="tagcolor">></span>
+                                                                     <p>The cat was playing in the garden.</p>
+                                                                     <span class="tagcolor">
+                                                                      <</span><span class="tagname">/textarea</span>
+                                                                        <span class="tagcolor">></span>
+                                                                   </div>
+                                                                    <a href="html_form19_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                  </div>
+                                                  <br>
+
+                                                                    <div class="container-fluid shadow p-3">
+                                                                      <h2>The < button > Element</h2>
+                                                                            <p>The <span class="tagcolor">
+                                                                              <<span class="tagname">button</span>> 
+                                                                          </span> element defines a clickable button:</p>
+                                                                            <div class="card-group p-4 p-md-3">
+                                                                              <div class="card">
+                                                                                <div class="card shadow p-3 bg-success ">
+                                                                                  <div class="card bg-dark text-white">
+                                                                                    <div class="card-header">
+                                                                                      <H2 class="text-LEFT">Example</H2>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                    
+                                                                                  <div class="card-body bg-light">
+                                                                                    <span class="tagcolor">
+                                                                                      <<span class="tagname">button type</span>
+                                                                                     ="button"<span class="tagcolor"></span>
+                                                                                     <span class="tagname">onclick</span>
+                                                                                     <span class="tagcolor">="alert('Hello World')"</span>  
+                                                                                     <span class="tagcolor">></span>
+                                                                                    </span> Click Me!
+                                                                                     <span class="tagcolor">
+                                                                                      <</span><span class="tagname">/button</span>
+                                                                                        <span class="tagcolor">></span>
+
+                                                                                   </div>
+                                                                                    <a href="html_form20_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                    </div>    
+                                                                                    <p class="h3 bg-success-subtle"><strong>Note: Always specify the <span class="tagname"> type</span> 
+                                                                                      attribute for the button element. Different browsers may use different default
+                                                                                       types for the button element.</strong></p>
+                                                                                      <br>
+
+                                                                                      <div class="container-fluid shadow p-3">
+                                                                                        <h2>The < fieldset > and < legend > Elements</h2>
+                                                                                              <p>The <span class="tagcolor">
+                                                                                                <<span class="tagname">fieldset</span>> 
+                                                                                            </span> element is used to group related data in a form.</p>
+                                                                                            <p>The <span class="tagcolor">
+                                                                                              <<span class="tagname">legend</span>> 
+                                                                                          </span>  element defines a caption for the <span class="tagcolor">
+                                                                                            <<span class="tagname">fieldset</span>> 
+                                                                                        </span> element. </p>
+                                                                                              <div class="card-group p-4 p-md-3">
+                                                                                                <div class="card">
+                                                                                                  <div class="card shadow p-3 bg-success ">
+                                                                                                    <div class="card bg-dark text-white">
+                                                                                                      <div class="card-header">
+                                                                                                        <H2 class="text-LEFT">Example</H2>
+                                                                                                      </div>
+                                                                                                      </div>
+                                                                                                      
+                                                                                                    <div class="card-body bg-light">
+
+                                                                                                      <span class="tagcolor">
+                                                                                                        <<span class="tagname">form action</span>
+                                                                                                       ="/action_page.php"><span class="tagcolor"></span>
+                                                                                                          <br>
+                                                                                                          <br>
+
+                                                                                                          <</span><span class="tagname">fieldset</span>
+                                                                                                          <span class="tagcolor">></span>
+                                                                                                          <br>
+
+                                                                                                          <span class="tagcolor">
+                                                                                                          <</span><span class="tagname">legend</span>
+                                                                                                          <span class="tagcolor">></span>
+                                                                                                      </span> Personalia: <span class="tagcolor"><</span><span class="tagname">/fieldset</span>
+                                                                                                      <span class="tagcolor">></span>
+                                                                                                      <br>
+
+                                                                                                      <span class="tagcolor">
+                                                                                                      <<span class="tagname">label for</span>
+                                                                                                       ="fname"<span class="tagcolor">></span> 
+                                                                                                          </span> First name: <span class="tagcolor">
+                                                                                                          <</span><span class="tagname">/label</span>
+                                                                                                            <span class="tagcolor">><</span><span class="tagname">br</span>
+                                                                                                            <span class="tagcolor">></span>
+                                                                                                            <br>
+
+                                                                                                            <span class="tagcolor">
+                                                                                                              <<span class="tagname">input type</span>
+                                                                                                             ="text"<span class="tagcolor"></span>
+                                                                                                             <span class="tagname">id</span>
+                                                                                                             <span class="tagcolor">="fname"</span>  
+                                                                                                             <span class="tagname">name</span>
+                                                                                                             <span class="tagcolor">="fname"</span>  
+                                                                                                             <span class="tagname">value</span>
+                                                                                                             <span class="tagcolor">="John"></span>
+                                                                                                             <span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                                                                                                             <br>
+
+                                                                                                             <<span class="tagname">label for</span>
+                                                                                                              ="lname"<span class="tagcolor">></span> 
+                                                                                                            </span> Last name: <span class="tagcolor">
+                                                                                                            <</span><span class="tagname">/label</span>
+                                                                                                              <span class="tagcolor">><</span><span class="tagname">br</span>
+                                                                                                              <span class="tagcolor">></span>
+                                                                                                              <br>
+
+                                                                                                              <span class="tagcolor">
+                                                                                                                <<span class="tagname">input type</span>
+                                                                                                              ="text"<span class="tagcolor"></span>
+                                                                                                              <span class="tagname">id</span>
+                                                                                                              <span class="tagcolor">="lname"</span>  
+                                                                                                              <span class="tagname">name</span>
+                                                                                                              <span class="tagcolor">="lname"</span>
+                                                                                                              <span class="tagname">value</span>
+                                                                                                              <span class="tagcolor">="Doe"></span>
+                                                                                                              <span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                                                                                                              <br>
+
+                                                                                                              <span class="tagcolor">
+                                                                                                                <<span class="tagname">input type</span>
+                                                                                                              ="submit"<span class="tagcolor"></span>
+                                                                                                              <span class="tagname">value</span>
+                                                                                                              <span class="tagcolor">="submit"></span>  
+                                                                                                              <br>
+
+                                                                                                              <</span><span class="tagname">/fieldset</span>
+                                                                                                          <span class="tagcolor">></span>
+                                                                                                          <br>
+                                                                                                          <br>
+                                                                                                          
+                                                                                                          <</span><span class="tagname">/form</span>
+                                                                                                          <span class="tagcolor">></span>
+                                                                                                          <br>
+                                                                                                     </div>
+                                                                                                      <a href="html_form21_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>  
+                                                                                              <h4>This is how the HTML code above will be displayed in a browser:</h4>
+                                                                                              <img class="img-fluid" src="assets/form30.png" alt="html" alt="" style="width: 100%">
+                                                                                      </div>
+                                                                                      <br>
+
+                                                                                              <div class="container-fluid shadow p-3">
+                                                                                                <h2>The < datalist > Element</h2>
+                                                                                                      <p>The <span class="tagcolor">
+                                                                                                        <<span class="tagname">datalist</span>> 
+                                                                                                    </span> element specifies a list of pre-defined options for an <span class="tagcolor">
+                                                                                                      <<span class="tagname">input</span>></span> element.</p>
+                                                                                                      <p>Users will see a drop-down list of the pre-defined options as they input data.</p>
+                                                                                                    <p>The <span class="tagcolor">
+                                                                                                      <<span class="tagname">list</span>> 
+                                                                                                  </span> attribute of the<span class="tagcolor">
+                                                                                                    <<span class="tagname">input</span>> 
+                                                                                                </span> element, must refer to the <span class="tagname"> id </span>attribute of the
+                                                                                                <span class="tagcolor">
+                                                                                                  <<span class="tagname">datalist</span>></span> element.</p>
+                                                                                                      <div class="card-group p-4 p-md-3">
+                                                                                                        <div class="card">
+                                                                                                          <div class="card shadow p-3 bg-success ">
+                                                                                                            <div class="card bg-dark text-white">
+                                                                                                              <div class="card-header">
+                                                                                                                <H2 class="text-LEFT">Example</H2>
+                                                                                                              </div>
+                                                                                                              </div>
+                                                                                                              
+                                                                                                            <div class="card-body bg-light">
+
+                                                                                                              <span class="tagcolor">
+                                                                                                                <<span class="tagname">form action</span>
+                                                                                                               ="/action_page.php"<span class="tagcolor">></span> 
+                                                                                                              <br>
+
+                                                                                                              <span class="tagcolor">
+                                                                                                                <<span class="tagname">input list</span>
+                                                                                                               ="browsers"<span class="tagcolor">></span> 
+                                                                                                               <br>
+
+                                                                                                               <span class="tagcolor">
+                                                                                                                <<span class="tagname">datalist id</span>
+                                                                                                               ="browsers"<span class="tagcolor">></span> 
+                                                                                                               <br>
+
+                                                                                                               <span class="tagcolor">
+                                                                                                                <<span class="tagname">option value</span>
+                                                                                                               ="Internet Explorer"<span class="tagcolor">></span> 
+                                                                                                               <br>
+
+                                                                                                               <span class="tagcolor">
+                                                                                                                <<span class="tagname">option value</span>
+                                                                                                               ="Firefox"<span class="tagcolor">></span> 
+                                                                                                               <br>
+
+                                                                                                               <span class="tagcolor">
+                                                                                                                <<span class="tagname">option value</span>
+                                                                                                               ="Chrome"<span class="tagcolor">></span> 
+                                                                                                               <br>
+
+                                                                                                               <span class="tagcolor">
+                                                                                                                <<span class="tagname">option value</span>
+                                                                                                               ="Opera"<span class="tagcolor">></span> 
+                                                                                                               <br>
+
+                                                                                                               <span class="tagcolor">
+                                                                                                                <<span class="tagname">option value</span>
+                                                                                                               ="Safari"<span class="tagcolor">></span> 
+                                                                                                               <br>
+                                                                                                               <br>
+
+                                                                                                               <</span><span class="tagname">/datalist</span>
+                                                                                                          <span class="tagcolor">></span>
+                                                                                                          <br>
+
+                                                                                                          <</span><span class="tagname">/form</span>
+                                                                                                          <span class="tagcolor">></span>
+
+                                                                                                             </div>
+                                                                                                              <a href="html_form22_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                              </div>
+                                                                                              <br>
+
+                                                                                                      <div class="container-fluid shadow p-3">
+                                                                                                        <h2>The < output > Element</h2>
+                                                                                                              <p>The <span class="tagcolor">
+                                                                                                                <<span class="tagname">output</span>> 
+                                                                                                            </span> element represents the result of a calculation 
+                                                                                                            (like one performed by a script).</p>
+                                                                                                            <div class="card-group p-4 p-md-3">
+                                                                                                              <div class="card">
+                                                                                                                <div class="card shadow p-3 bg-success ">
+                                                                                                                  <div class="card bg-dark text-white">
+                                                                                                                    <div class="card-header">
+                                                                                                                      <H2 class="text-LEFT">Example</H2>
+                                                                                                                      <h5>Perform a calculation and show the result in an <span class="tagcolor">
+                                                                                                                        <<span class="tagname">output</span>> 
+                                                                                                                    </span> element:</h5>
+                                                                                                                    </div>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                  <div class="card-body bg-light">
+
+                                                                                                                    <span class="tagcolor">
+                                                                                                                      <<span class="tagname">form action</span>
+                                                                                                                     ="/action_page.php" 
+                                                                                                                     <br>
+                                                                                                                     <span class="tagname">oninput</span> ="x.value=parseInt(a.value)+parseInt(b.value)"><span class="tagcolor"></span>
+                                                                                                                     <br>
+                                                                                                                    <p>0</p>
+                                                                                                                    
+                                                                                                                    <span class="tagcolor">
+                                                                                                                      <<span class="tagname">input type</span>
+                                                                                                                     ="range"<span class="tagcolor"></span>
+                                                                                                                     <span class="tagname">id</span>
+                                                                                                                     <span class="tagcolor">="a"</span>  
+                                                                                                                     <span class="tagname">name</span>
+                                                                                                                     <span class="tagcolor">="a"</span>
+                                                                                                                     <span class="tagname">value</span>
+                                                                                                                     <span class="tagcolor">="50"></span>
+                                                                                                                     <br>
+                                                                                                                     <p>100 + </p>
+                                                                                                                    
+                                                                                                                  
+                                                                                                                    <span class="tagcolor">
+                                                                                                                    <<span class="tagname">input type</span>
+                                                                                                                     ="number"<span class="tagcolor"></span>
+                                                                                                                     <span class="tagname">id</span>
+                                                                                                                     <span class="tagcolor">="b"</span>  
+                                                                                                                     <span class="tagname">name</span>
+                                                                                                                     <span class="tagcolor">="b"</span>
+                                                                                                                     <span class="tagname">value</span>
+                                                                                                                     <span class="tagcolor">="50"></span>
+                                                                                                                     
+                                                                                                                     <p>=</p>
+                                                                                                                     <<span class="tagname">output name</span>
+                                                                                                                     ="x"<span class="tagcolor"></span>
+                                                                                                                     <span class="tagname">for</span>
+                                                                                                                     <span class="tagcolor">="a  b"></span> 
+                                                                                                                     <span class="tagcolor">
+                                                                                                                      <</span><span class="tagname">/output</span>
+                                                                                                                        <span class="tagcolor">></span> 
+                                                                                                                        <br>
+                                                                                                                        <span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                                                                                                                        <br>
+                                                                                                                        <span class="tagcolor">
+                                                                                                                          <<span class="tagname">input type</span>
+                                                                                                                         ="submit"<span class="tagcolor">></span>
+                                                                                                                         <br>
+                                                                                                                         <br>
+
+                                                                                                                         <span class="tagcolor">
+                                                                                                                          <</span><span class="tagname">/form</span>
+                                                                                                                            <span class="tagcolor">></span>
+                                                                                                                   </div>
+                                                                                                                    <a href="html_form23_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                    </div>
+                                                                                                    <br>
+
+                                                                                                    <div class="container-fluid shadow p-3">
+                                                                                                      <h2>HTML Form Elements</h2>
+                                                                                                                        <ul>
+                                                                                                                             <li><strong>< form > - </strong> 	Defines an HTML form for user input</li>
+                                                                                                                             <li><strong>< input > - </strong> Defines an input control</li>  
+                                                                                                                             <li><strong>< textarea > - </strong> Defines a multiline input control (text area)</li> 
+                                                                                                                             <li><strong>< label > - </strong> Defines a label for an < input > element</li> 
+                                                                                                                             <li><strong>< fieldset > - </strong> Groups related elements in a form</li>
+                                                                                                                             <li><strong>< legend > - </strong> Defines a caption for a < fieldset > element</li>
+                                                                                                                             <li><strong>< select > - </strong> Defines a drop-down list</li>
+                                                                                                                             <li><strong>< optgroup > - </strong> Defines a group of related options in a drop-down list</li>
+                                                                                                                             <li><strong>< option > - </strong> Defines an option in a drop-down list</li>
+                                                                                                                             <li><strong>< button > - </strong> Defines a clickable button</li>
+                                                                                                                             <li><strong>< datalist > - </strong> Specifies a list of pre-defined options for input controls</li>
+                                                                                                                             <li><strong>< output > - </strong> Defines the result of a calculation</li>  
+                                                                                                                        </ul>   
+                                                                                                    </div>
+                                                                                                    <br>
+                  <a href="#" class="btn">Click me to Climb Up!</a>
+        </div>
+      </div>
+
+        <script>
+            $(document).ready(function () {
+              $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+              });
+            });
+          </script>
+    </body>
+    
+    </html>

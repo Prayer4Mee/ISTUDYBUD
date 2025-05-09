@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- nandito yung title ng page mga hangal ito yun -->
+  <link rel="icon" type="image/png" href="assets/ib.png" > <title>HTML Input Attributes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" type="text/css" href="css/boostrap.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap JS -->
+  <script type="js/boostrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  /*
+    DEMO STYLE
+*/
+
+  @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+  }
+
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: black;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+  }
+
+  /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+  /*Makes the sidebar go left*/
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  .btn{
+    background-color: #212529;
+    color: white;
+  }
+  .btn:hover{
+    background-color:  #198754;
+    color:white;
+  }
+
+  /*The whole sidebar itself*/
+  #sidebar {
+    height: 100%;
+    background:   #212529;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  /*The reason why sidebar there*/
+  #sidebar.active {
+    margin-left: -250px;
+  }
+
+  /*sidebar yung header*/
+  #sidebar .sidebar-header {
+    text-align: center;
+    padding: 10px;
+    background: #212429;
+  }
+
+  /*<h2>*/
+  #sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+  }
+
+  /*<h2>*/
+  #sidebar ul p {
+    color: #fff;
+    padding: 10px;
+  }
+
+  /*The font of the content of the sidebar (limited only to list)*/
+  #sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  /*hover*/
+  #sidebar ul li a:hover {
+    color: white;
+    background: #198754;
+    transition: 0.5s;
+    letter-spacing: 1px;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #sidebar ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  /*Dropdown arrow*/
+  a[data-toggle="collapse"] {
+    position: relative;
+  }
+
+  .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background:   #212529;
+  }
+
+ 
+.nav-link:hover {
+color: black;
+}
+  /*The color of the download*/
+
+  /*the 2nd button*/
+  a.article,
+  a.article:hover {
+    background: #6d7fcc !important;
+    /*also the color of the text of the 2nd text*/
+    color: #fff !important;
+  }
+
+  /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+  #content {
+    width: 100%;
+    /*    padding: 20px;*/
+    min-height: 100vh;
+    transition: all 0.3s;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #content ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  #right {
+    float: right;
+  }
+
+  .tagcolor {
+    color: blue;
+    font-size: 20px;
+  }
+
+  .tagname {
+    color: red;
+    font-size: 20px;
+  }
+
+
+  /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+  /*The media object helps build complex and repetitive 
+components where some media is positioned alongside content 
+that doesn’t wrap around said media. Plus, it does this 
+with only two required classes thanks to flexbox.
+Oh gosh thank you! Ito pala yung kailangan ko*/
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -250px;
+    }
+
+    #sidebar.active {
+      margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <section id="sb">
+      <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+          <a href="../home.html"><h3 class="logo" style="font-family: Audiowide, sans-serif;">  ISTUDY<span
+            class="text-white">BUD</span></h2></a>
+        </div>
+
+        <ul class="list-unstyled components">
+          <i>
+            <p class="text-center ">Let us be your study buddy!</p>
+          </i>
+          <li class="">
+            <!-- Accessible Rich Internet Applications (ARIA) - more accessible to people with disabilities. -->
+            <a href="#"></i> HTML TUTORIAL</a>
+          </li>
+ <!-- HTML Introduction -->
+ <!-- kita mo yang class="active"? lagay mo yan kung anong part sila, intro or forms, or media. tanggalin pag hindi sila nandun -->
+          <li>
+            <a href="#hIntro" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> HTML INTRO</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hIntro">
+            <!-- kita mo yang class="active"? lagay mo yan kung nasaan sila na page right now -->
+            <li class="">
+              <!-- Nandito yung papalitan mo yung content ng href -->
+              <a href="html_editors.html">HTML Editors</a>
+            </li>
+            <li class="">
+              <a href="html_basic.html">HTML Basic</a>
+            </li>
+            <li>
+              <a href="html_elements.html">HTML Elements</a>
+            </li>
+            <li>
+              <a href="html_attributes.html">HTML Attributes</a>
+            </li>
+            <li>
+              <a href="html_headings.html">HTML Headings</a>
+            </li>
+            <li class="">
+              <a href="html_paragraphs.html">HTML Paragraphs</a>
+            </li>
+            <li class="">
+              <a href="html_styles.html">HTML Styles</a>
+            </li>
+            <li>
+              <a href="html_formatting.html">HTML Formatting</a>
+            </li>
+            <li>
+              <a href="html_quotations.html">HTML Quotations</a>
+            </li>
+            <li>
+              <a href="html_comments.html">HTML Comments</a>
+            </li>
+            <li>
+              <a href="html_colors.html">HTML Colors</a>
+            </li>
+            <li>
+              <a href="html_css.html">HTML CSS</a>
+            </li>
+            <li>
+              <a href="html_links.html">HTML Links</a>
+            </li>
+            <li>
+              <a href="html_images.html">HTML Images</a>
+            </li>
+            <li>
+              <a href="html_page_title.html">HTML Page Title</a>
+            </li>
+            <li>
+              <a href="html_tables.html">HTML Tables</a>
+            </li>
+            <li>
+              <a href="html_lists.html">HTML Lists</a>
+            </li>
+            <li>
+              <a href="html_block_&_inline.html">HTML Block & Inline</a>
+            </li>
+            <li>
+              <a href="html_iframes.html">HTML Iframes</a>
+            </li>
+          </ul>
+          </li>
+<!-- HTML Forms -->
+          <li class="active">   
+            <a href="#hForms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> HTML FORMS</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hForms">
+            <li>
+              <a href="html_forms.html">HTML Forms</a>
+            </li>
+            <li>
+              <a href="html_form_attributes.html">HTML Form Attributes</a>
+            </li>
+            <li>
+              <a href="html_form_elements.html">HTML Form Elements</a>
+            </li>
+            <li>
+              <a href="#">HTML Input Types</a>
+            </li>
+            <li class="active">
+              <a href="html_input_attributes.html">HTML Input Attributes</a>
+            </li>
+          </ul>
+          </li>
+<!-- HTML MEDIA -->
+          <li>
+            <a href="#hMedia" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> HTML MEDIA</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hMedia">
+            <li>
+              <a href="html_media.html">HTML Media</a>
+            </li>
+            <li>
+              <a href="html_video.html">HTML Video</a>
+            </li>
+            <li>
+              <a href="html_audio.html">HTML Audio</a>
+            </li>
+            <li>
+              <a href="html_youtube.html">HTML Youtube</a>
+            </li>
+          </ul>
+          </li>
+
+          <li>
+            <a href="/html-quiz.html">HTML QUIZ</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Sidebar -->
+    <!-- Page Content  -->
+
+    <div id="content">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow shadow-info shadow-intensity-lg">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn btn-info bg-success">
+            <span><i class="fa fa-bars"></i></span>
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto h4 ">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="css_introduction.html">CSS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="js_introduction.html">JAVASCRIPT</a>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Page</a>
+                </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="card shadow border-black m-5">
+        <div> <a class="btn " href="html_input_types.html"><i class="fa-solid fa-arrow-left"></i>  BACK</a>
+          <a class="btn " href="html_media.html" id="right"><i class="fa-sharp fa-solid fa-arrow-right"></i>  NEXT</a>
+        </div>
+      </div>
+
+      <div id="content" class="p-4 p-md-5">
+        
+        <div class="card shadow p-3">
+          <div class="card-body  ">
+            <dl class="row">
+              <dt class="h1 col-sm-3 mb-4">HTML Input Attributes</dt>
+              <dd class="h4 col-sm-9">
+                <p class="lead text-justify">
+                    This chapter describes the different attributes for the HTML <span class="tagcolor">
+                        <<span class="tagname">input</span>> 
+                    </span> element. </p>
+                                <figure class="text-end">
+                  <blockquote class="blockquote">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    World's largest web developer site, <cite title="Source Title">w3schools</cite>
+                  </figcaption>
+                </figure>
+              </dd>
+          </div>
+        </div>
+        <br>
+
+        <div class="container-fluid shadow p-3">
+            <h2>The value Attribute</h2>
+            <p>The input
+              <span class="tagname">value</span>
+          attribute specifies an initial value for an input field:</p>
+          
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>Input fields with initial (default) values:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+                              
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="fname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="fname"</span>
+                           <span class="tagname">value</span>
+                           <span class="tagcolor">="John"></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <br>
+
+                           <<span class="tagname">label for</span>
+                          ="lname"<span class="tagcolor">></span> 
+                        </span> Last name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="lname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="lname"</span>
+                           <span class="tagname">value</span>
+                           <span class="tagcolor">="Doe"></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span>
+                              <span class="tagcolor">></span>
+                         </div>
+                          <a href="html_form49_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The readonly Attribute</h2>
+            <p>The input
+              <span class="tagname">readonly</span>
+              attribute specifies that an input field is read-only.</p>
+          <p>A read-only input field cannot be modified (however, a user can tab to it, highlight it, and copy the text from it).</p>
+          <p>The value of a read-only input field will be sent when submitting the form!</p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>A read-only input field:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+                              
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="fname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="fname"</span>
+                           <span class="tagname">value</span>
+                           <span class="tagcolor">="John"</span>
+                           <span class="tagname">readonly<span class="tagcolor">></span></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <br>
+
+                           <<span class="tagname">label for</span>
+                          ="lname"<span class="tagcolor">></span> 
+                        </span> Last name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="lname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="lname"</span>
+                           <span class="tagname">value</span>
+                           <span class="tagcolor">="Doe"></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span>
+                              <span class="tagcolor">></span>
+                         </div>
+                          <a href="html_form50_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The disabled Attribute</h2>
+            <p>The input
+              <span class="tagname">disabled</span>
+              attribute specifies that an input field should be disabled.</p>
+          <p>A disabled input field is unusable and un-clickable.</p>
+          <p>The value of a disabled input field will not be sent when submitting the form!</p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>A disabled input field:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+                              
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="fname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="fname"</span>
+                           <span class="tagname">value</span>
+                           <span class="tagcolor">="John"</span>
+                           <span class="tagname">disabled<span class="tagcolor">></span></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <br>
+
+                           <<span class="tagname">label for</span>
+                          ="lname"<span class="tagcolor">></span> 
+                        </span> Last name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="lname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="lname"</span>
+                           <span class="tagname">value</span>
+                           <span class="tagcolor">="Doe"></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span>
+                              <span class="tagcolor">></span>
+                         </div>
+                          <a href="html_form51_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The size Attribute</h2>
+            <p>The input
+              <span class="tagname">size</span>
+              attribute specifies the visible width, in characters, of an input field.</p>
+          <p>The default value for<span class="tagname"> size</span> is 20. </p>
+          <p><strong>NOTE:</strong> The <span class="tagname">size</span> attribute works with the following input 
+            types: text, search, tel, url, email, and password. </p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>Set a width for an input field:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+                              
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="fname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="fname"</span>
+                           <span class="tagname">size</span>
+                           <span class="tagcolor">="50"</span>
+                           <span class="tagcolor">></span></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                           <<span class="tagname">label for</span>
+                          ="pin"<span class="tagcolor">></span> 
+                        </span> PIN : <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="pin"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="pin"</span>
+                           <span class="tagname">size</span>
+                           <span class="tagcolor">="4"></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span>
+                              <span class="tagcolor">></span>
+                         </div>
+                          <a href="html_form52_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The maxlength Attribute</h2>
+            <p>The input
+              <span class="tagname">maxlength</span>
+              attribute specifies the maximum number of characters allowed in an input field.</p>
+          <p><strong>NOTE:</strong> When a <span class="tagname"> maxlength</span> is set, the input field will not accept more than the specified number of characters. However, 
+            this attribute does not provide any feedback. So, if you want to alert the user, you must write JavaScript code. </p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>Set a maximum length for an input field:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+                              
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="fname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="fname"</span>
+                           <span class="tagname">size</span>
+                           <span class="tagcolor">="50"</span>
+                           <span class="tagcolor">></span></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                           <<span class="tagname">label for</span>
+                          ="pin"<span class="tagcolor">></span> 
+                        </span> PIN : <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="pin"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="pin"</span>
+                           <span class="tagname">maxlength</span>
+                           <span class="tagcolor">="4"</span>
+                           <span class="tagname">size</span>
+                           <span class="tagcolor">="4"></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span>
+                              <span class="tagcolor">></span>
+                         </div>
+                          <a href="html_form53_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The min and max Attributes</h2>
+            <p>The input
+              <span class="tagname">min and max</span>
+              attributes specify the minimum and maximum values for an input field.</p>
+              <p>The <span class="tagname"> min and max </span>attributes work with the following input types: number, 
+                range, date, datetime-local, month, time and week.</p>
+          <p><strong>TIP:</strong> When a <span class="tagname"> maxlength</span> Use the max and min 
+            attributes together to create a range of legal values. </p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>Set a max date, a min date, and a range of legal values:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+                              
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="datemax"<span class="tagcolor">></span> 
+                        </span> Enter a date before 1980-01-01 : <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="date"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="datemax"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="datemax"</span>
+                           <span class="tagname">max</span>
+                           <span class="tagcolor">="1979-12-31"</span>
+                           <span class="tagcolor">></span></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <br>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">label for</span>
+                        ="datemin"<span class="tagcolor">></span> 
+                      </span> Enter a date after 2000-01-01 : <span class="tagcolor">
+                       <</span><span class="tagname">/label</span>
+                         <span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <<span class="tagname">input type</span>
+                         ="date"<span class="tagcolor"></span>
+                         <span class="tagname">id</span>
+                         <span class="tagcolor">="datemin"</span>  
+                         <span class="tagname">name</span>
+                         <span class="tagcolor">="datemin"</span>
+                         <span class="tagname">max</span>
+                         <span class="tagcolor">="2000-01-02"</span>
+                         <span class="tagcolor">></span></span><span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                         <span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                         <br>
+                         <br>
+
+                         <span class="tagcolor">
+                          <<span class="tagname">label for</span>
+                      ="quantity"<span class="tagcolor">></span> 
+                    </span> Quantity (between 1 and 5) : <span class="tagcolor">
+                     <</span><span class="tagname">/label</span>
+                       <span class="tagcolor">></span>
+                       <br>
+
+                       <span class="tagcolor">
+                        <<span class="tagname">input type</span>
+                       ="number"<span class="tagcolor"></span>
+                       <span class="tagname">id</span>
+                       <span class="tagcolor">="quantity"</span>  
+                       <span class="tagname">name</span>
+                       <span class="tagcolor">="quantity"</span>
+                       <span class="tagname">min</span>
+                       <span class="tagcolor">="1"</span>
+                       <span class="tagname">max</span>
+                       <span class="tagcolor">="5"></span>
+                       <br> 
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span>
+                              <span class="tagcolor">></span>
+                         </div>
+                          <a href="html_form54_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The multiple Attribute</h2>
+            <p>The input
+              <span class="tagname">multiple</span>
+              attribute specifies that the user is allowed to enter more than one value in an input field.</p>
+              <p>The <span class="tagname"> multiple</span> attribute works with the following input types: email, and file.</p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>A file upload field that accepts multiple values:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="files"<span class="tagcolor">></span> 
+                        </span> Select files : <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                         <span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <<span class="tagname">input type</span>
+                         ="file"<span class="tagcolor"></span>
+                         <span class="tagname">id</span>
+                         <span class="tagcolor">="files"</span>  
+                         <span class="tagname">name</span>
+                         <span class="tagcolor">="files"</span>
+                         <span class="tagname">multiple</span>
+                         <span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <</span><span class="tagname">/form</span>
+                            <span class="tagcolor">></span>
+                         </div>
+                          <a href="html_form55_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The pattern Attribute</h2>
+            <p>The input
+              <span class="tagname">pattern</span>
+              attribute specifies a regular expression that the input field's value is checked against, when the form is submitted.</p>
+              <p>The <span class="tagname"> pattern</span> attribute works with the following input types: text, date, search, url, tel, email, and password.</p>
+              <p><strong>TIP: </strong> Use the global title attribute to describe the pattern to help the user.</p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>An input field that can contain only three letters (no numbers or special characters):</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="country_code"<span class="tagcolor">></span> 
+                        </span> Country code : <span class="tagcolor">
+                         <</span><span class="tagname">/label</span><span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <<span class="tagname">input type</span>
+                         ="text"<span class="tagcolor"></span>
+                         <span class="tagname">id</span>
+                         <span class="tagcolor">="country_code"</span>  
+                         <span class="tagname">name</span>
+                         <span class="tagcolor">="country_code"</span>
+                         <br>
+                         <span class="tagname">pattern</span>
+                         <span class="tagcolor">="[A-Za-z]{3}"</span>
+                         <span class="tagname">title</span>
+                         <span class="tagcolor">="Three letter country code"></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <</span><span class="tagname">/form</span>
+                            <span class="tagcolor">></span> 
+                         </div>
+                          <a href="html_form56_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The placeholder Attribute</h2>
+            <p>The input
+              <span class="tagname">placeholder</span>
+              attribute specifies a short hint that describes the expected value of an input field 
+              (a sample value or a short description of the expected format).</p>
+              <p>The short hint is displayed in the input field before the user enters a value.</p>
+              <p>The <span class="tagname">placeholder</span> attribute works with the following input types: text, search, url, tel, email, and password</p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>An input field with a placeholder text:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span>
+                              <br>
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="phone"<span class="tagcolor">></span> 
+                        </span> Enter a phone number : <span class="tagcolor">
+                         <</span><span class="tagname">/label</span><span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <<span class="tagname">input type</span>
+                         ="tel"<span class="tagcolor"></span>
+                         <span class="tagname">id</span>
+                         <span class="tagcolor">="phone"</span>  
+                         <span class="tagname">name</span>
+                         <span class="tagcolor">="phone"</span>
+                         <br>
+                         <span class="tagname">placeholder</span>
+                         <span class="tagcolor">="123-45-678"</span>
+                         <br>
+                         <span class="tagname">pattern</span>
+                         <span class="tagcolor">="[0-9]{3}-[0-9{2}-[0-9]{3}"></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <</span><span class="tagname">/form</span>
+                            <span class="tagcolor">></span> 
+                         </div>
+                          <a href="html_form57_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The required Attribute</h2>
+            <p>The input
+              <span class="tagname">required</span>
+              attribute specifies that an input field must be filled out before submitting the form.</p>
+              <p>The <span class="tagname">required</span> attribute works with the following input types: text, search, url, tel, 
+                email, password, date pickers, number, checkbox, radio, and file.</p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>A required input field:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span> 
+                              <br>
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                              ="username"<span class="tagcolor">></span> 
+                            </span> Username : <span class="tagcolor">
+                             <</span><span class="tagname">/label</span><span class="tagcolor">></span>
+                             <br>
+
+                             <span class="tagcolor">
+                              <<span class="tagname">input type</span>
+                             ="text"<span class="tagcolor"></span>
+                             <span class="tagname">id</span>
+                             <span class="tagcolor">="username"</span>  
+                             <span class="tagname">name</span>
+                             <span class="tagcolor">="username"</span>
+                             <span class="tagname">required</span><span class="tagcolor">></span>
+                             <br>
+
+                             <span class="tagcolor">
+                              <</span><span class="tagname">/form</span><span class="tagcolor">></span> 
+                         </div>
+                          <a href="html_form58_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <div class="container-fluid shadow p-3">
+            <h2>The step Attribute</h2>
+            <p>The input
+              <span class="tagname">step</span>
+              attribute specifies the legal number intervals for an input field.</p>
+              <p>Example: if step="3", legal numbers could be -3, 0, 3, 6, etc.</p>
+              <p><strong>TIP: </strong> This attribute can be used together with the 
+                max and min attributes to create a range of legal values.</p>
+                <p>The <span class="tagname">step</span> attribute works with the following input types: number, 
+                  range, date, datetime-local, month, time and week.</p>
+                  <div class="card-group p-4 p-md-3">
+                    <div class="card">
+                      <div class="card shadow p-3 bg-success ">
+                        <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <H2 class="text-LEFT">Example</H2>
+                            <h5>An input field with a specified legal number intervals:</h5>
+                          </div>
+                          </div>
+                          
+                        <div class="card-body bg-light">
+
+                          <span class="tagcolor">
+                            <</span><span class="tagname">form</span>
+                              <span class="tagcolor">></span> 
+                              <br>
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                              ="points"<span class="tagcolor">></span> 
+                            </span> Points : <span class="tagcolor">
+                             <</span><span class="tagname">/label</span><span class="tagcolor">></span>
+                             
+                             <br>
+
+                             <span class="tagcolor">
+                              <<span class="tagname">input type</span>
+                             ="number"<span class="tagcolor"></span>
+                             <span class="tagname">id</span>
+                             <span class="tagcolor">="points"</span>  
+                             <span class="tagname">name</span>
+                             <span class="tagcolor">="points"</span>
+                             <span class="tagname">step</span>
+                             <span class="tagcolor">="3"></span>
+                             <br>
+
+                             <span class="tagcolor">
+                              <</span><span class="tagname">/form</span><span class="tagcolor">></span> 
+                         </div>
+                          <a href="html_form59_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <br>
+
+          <p class="h3 bg-success-subtle"><strong>NOTE: Input restrictions are not foolproof, and JavaScript provides many ways to add illegal input. To safely restrict 
+            input, it must also be checked by the receiver (the server)!</strong></p>
+            <br>
+
+            <div class="container-fluid shadow p-3">
+              <h2>The autofocus Attribute</h2>
+              <p>The input
+                <span class="tagname">autofocus</span>
+                attribute specifies that an input field should automatically get focus when the page loads.</p>
+                    <div class="card-group p-4 p-md-3">
+                      <div class="card">
+                        <div class="card shadow p-3 bg-success ">
+                          <div class="card bg-dark text-white">
+                            <div class="card-header">
+                              <H2 class="text-LEFT">Example</H2>
+                              <h5>Let the "First name" input field automatically get focus when the page loads:</h5>
+                            </div>
+                            </div>
+                            
+                          <div class="card-body bg-light">
+
+                            <span class="tagcolor">
+                              <</span><span class="tagname">form</span><span class="tagcolor">></span> 
+                              <br>
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                         <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <<span class="tagname">input type</span>
+                         ="text"<span class="tagcolor"></span>
+                         <span class="tagname">id</span>
+                         <span class="tagcolor">="fname"</span>  
+                         <span class="tagname">name</span>
+                         <span class="tagcolor">="fname"</span>
+                         <span class="tagname">autofocus</span>
+                         <span class="tagcolor">><</span><span class="tagname">br</span>
+                         <span class="tagcolor">></span>
+                         <br>
+
+                         <<span class="tagname">label for</span>
+                          ="lname"<span class="tagcolor">></span> 
+                        </span> Last name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">><</span><span class="tagname">br</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="lname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="lname"></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span><span class="tagcolor">></span>
+                           </div>
+                            <a href="html_form60_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <br>
+
+            <div class="container-fluid shadow p-3">
+              <h2>The height and width Attribute</h2>
+              <p>The input
+                <span class="tagname">height and width</span>
+                attributes specify the height and width of an <span class="tagcolor">
+                  <<span class="tagname">input type="image"</span>>
+                 </span> element.</p>
+                 <p class="h3 bg-success-subtle"><strong>TIP: Always specify both the height and width attributes for images. If height and width are set, the space required for the image is reserved when the page is loaded. Without these attributes, the browser does not know the size of the image, and cannot reserve the appropriate space to it.
+                   The effect will be that the page layout will change during loading (while the images load).</strong></p>
+                  <br>
+                    <div class="card-group p-4 p-md-3">
+                      <div class="card">
+                        <div class="card shadow p-3 bg-success ">
+                          <div class="card bg-dark text-white">
+                            <div class="card-header">
+                              <H2 class="text-LEFT">Example</H2>
+                              <h5>Define an image as the submit button, with height and width attributes:</h5>
+                            </div>
+                            </div>
+                            
+                          <div class="card-body bg-light">
+
+                            <span class="tagcolor">
+                              <</span><span class="tagname">form</span><span class="tagcolor">></span> 
+                              <br>
+
+                              <span class="tagcolor">
+                              <<span class="tagname">label for</span>
+                          ="fname"<span class="tagcolor">></span> 
+                        </span> First name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                          <<span class="tagname">input type</span>
+                         ="text"<span class="tagcolor"></span>
+                         <span class="tagname">id</span>
+                         <span class="tagcolor">="fname"</span>  
+                         <span class="tagname">name</span>
+                         <span class="tagcolor">="fname"</span>
+                         <</span><span class="tagname">br</span><span class="tagcolor">></span>
+                         <span class="tagcolor">
+                         <</span><span class="tagname">br</span><span class="tagcolor">></span>
+                         <br>
+
+                         <span class="tagcolor">
+                         <<span class="tagname">label for</span>
+                          ="lname"<span class="tagcolor">></span> 
+                        </span> Last name: <span class="tagcolor">
+                         <</span><span class="tagname">/label</span>
+                           <span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="text"<span class="tagcolor"></span>
+                           <span class="tagname">id</span>
+                           <span class="tagcolor">="lname"</span>  
+                           <span class="tagname">name</span>
+                           <span class="tagcolor">="lname"></span><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                         <span class="tagcolor"><</span><span class="tagname">br</span><span class="tagcolor">></span>
+                           <br>
+
+                           <span class="tagcolor">
+                            <<span class="tagname">input type</span>
+                           ="image"<span class="tagcolor"></span>
+                           <span class="tagname">src</span>
+                           <span class="tagcolor">="img_submit.gif"</span>  
+                           <span class="tagname">alt</span>
+                           <span class="tagcolor">="submit"</span> 
+                           <span class="tagname">width</span>
+                           <span class="tagcolor">="48"</span> 
+                           <span class="tagname">height</span>
+                           <span class="tagcolor">="48"></span> 
+
+                           <br>
+                           <span class="tagcolor">
+                            <</span><span class="tagname">/form</span><span class="tagcolor">></span>
+                           </div>
+                            <a href="html_form61_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <br>
+
+            <div class="container-fluid shadow p-3">
+              <h2>The list Attribute</h2>
+              <p>The input
+                <span class="tagname">list</span>
+                attribute refers to a <span class="tagcolor">
+                  <<span class="tagname">datalist</span>>
+                 </span> element that contains pre-defined options for an < input > element.</p>
+                    <div class="card-group p-4 p-md-3">
+                      <div class="card">
+                        <div class="card shadow p-3 bg-success ">
+                          <div class="card bg-dark text-white">
+                            <div class="card-header">
+                              <H2 class="text-LEFT">Example</H2>
+                              <h5>An < input > element with pre-defined values in a < datalist > :</h5>
+                            </div>
+                            </div>
+                            
+                          <div class="card-body bg-light">
+                            <span class="tagcolor">
+                              <</span><span class="tagname">form</span>
+                                <span class="tagcolor">></span>
+                                
+                                                        <span class="tagcolor">
+                                                          <br>
+                                                          <<span class="tagname">input list</span>
+                                                          ="browsers"<span class="tagcolor">></span>
+                                                          
+                                                          <span class="tagcolor">
+                                                            <br>
+                                                            <<span class="tagname">datalist id</span>
+                                                            ="browsers"<span class="tagcolor">></span>
+                                                            <br>
+                                                            <span class="tagcolor">
+                                                              <br>
+                                                              <<span class="tagname">option value</span>
+                                                              ="Internet Explorer"<span class="tagcolor">></span>
+                                                              <br>
+                                                              <<span class="tagname">option value</span>
+                                                              ="Firefox"<span class="tagcolor">></span>
+                                                              <br>
+                                                              <<span class="tagname">option value</span>
+                                                              ="Chrome"<span class="tagcolor">></span>
+                                                              <br>
+                                                              <<span class="tagname">option value</span>
+                                                              ="Opera"<span class="tagcolor">></span>
+                                                              <br>
+                                                              <<span class="tagname">option value</span>
+                                                              ="Safari"<span class="tagcolor">></span>
+                                                              <br>
+                                                              <br>
+                                                              <span class="tagcolor">
+                                                                <</span><span class="tagname">/datalist</span>
+                                                                  <span class="tagcolor">></span>
+                                                                  <br>
+                                                                  <span class="tagcolor">
+                                                                    <</span><span class="tagname">/form</span>
+                                                                      <span class="tagcolor">></span>
+                                                      </div>
+                            <a href="html_form62_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <br>
+
+            <div class="container-fluid shadow p-3">
+              <h2>The autocomplete Attribute</h2>
+              <p>The input
+                <span class="tagname">autocomplete</span>
+                attribute specifies whether a form or an input field should have autocomplete on or off.</p>
+                <p>Autocomplete allows the browser to predict the value. When a user starts to type in a field, 
+                  the browser should display options to fill in the field, based on earlier typed values.</p>
+                  <p>The <span class="tagname">autocomplete</span> attribute works with 
+                    <span class="tagcolor">
+                      <<span class="tagname">form</span>>
+                    </span> and the following <span class="tagcolor">
+                        <<span class="tagname">input</span>>
+                    </span> types: text, search, url, tel, email, password, datepickers, range, and color.</p>
+                    <div class="card-group p-4 p-md-3">
+                      <div class="card">
+                        <div class="card shadow p-3 bg-success ">
+                          <div class="card bg-dark text-white">
+                            <div class="card-header">
+                              <H2 class="text-LEFT">Example</H2>
+                              <h5>An HTML form with autocomplete on, and off for one input field:</h5>
+                            </div>
+                            </div>
+                            <div class="card-body bg-light">
+                              <span class="tagcolor">
+                              <<span class="tagname">form action</span>
+                               ="/action_page.php"<span class="tagcolor">
+                               <span class="tagname">autocomplete</span>
+                               <span class="tagcolor">="on"</span>></span>
+                               <br>
+                               <br>
+
+                                <<span class="tagname">label for</span>
+                                 ="fname"<span class="tagcolor">></span> 
+                               </span> First Name: <span class="tagcolor">
+                                <</span><span class="tagname">/label</span>
+                                  <span class="tagcolor">></span>
+                                  <br>
+
+                                  <span class="tagcolor">
+                                  <<span class="tagname">input type</span>
+                                 ="text"<span class="tagcolor"></span>
+                                 <span class="tagname">id</span>
+                                 <span class="tagcolor">="fname"</span>
+                                 <span class="tagname">name</span>
+                                 <span class="tagcolor">="fname"></span>
+                                 <<span class="tagname">br</span>><<span class="tagname">br</span>>
+                                 <br>
+
+                                 <<span class="tagname">label for</span>
+                                 ="lname"<span class="tagcolor">></span> 
+                               </span> Last Name: <span class="tagcolor">
+                                <</span><span class="tagname">/label</span>
+                                  <span class="tagcolor">></span>
+                                  <br>
+
+                                  <span class="tagcolor">
+                                    <<span class="tagname">input type</span>
+                                   ="text"<span class="tagcolor"></span>
+                                   <span class="tagname">id</span>
+                                   <span class="tagcolor">="lname"</span>
+                                   <span class="tagname">name</span>
+                                   <span class="tagcolor">="lname"></span>
+                                   <<span class="tagname">br</span>><<span class="tagname">br</span>>
+                                   <br>
+
+                                   <<span class="tagname">label for</span>
+                                 ="email"<span class="tagcolor">></span> 
+                               </span> Email: <span class="tagcolor">
+                                <</span><span class="tagname">/label</span>
+                                  <span class="tagcolor">></span>
+                                  <br>
+
+                                  <span class="tagcolor">
+                                    <<span class="tagname">input type</span>
+                                   ="email"<span class="tagcolor"></span>
+                                   <span class="tagname">id</span>
+                                   <span class="tagcolor">="email"</span>
+                                   <span class="tagname">name</span>
+                                   <span class="tagcolor">="email"></span>
+                                   <span class="tagname">autocomplete</span>
+                                   <span class="tagcolor">="off"</span>
+                                   <<span class="tagname">br</span>><<span class="tagname">br</span>>
+                                   <br>
+
+                                   <span class="tagcolor">
+                                    <<span class="tagname">input type</span>
+                                   ="submit"<span class="tagcolor"></span>
+                                   <span class="tagname">value</span>
+                                   <span class="tagcolor">="submit"</span>
+                                   <br>
+                                   <br>
+                                   <span class="tagcolor">
+                                    <</span><span class="tagname">/form</span>
+                                      <span class="tagcolor">></span>
+                              </div>
+                            <a href="html_form63_editor.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <br>
+
+            <p class="h3 bg-success-subtle"><strong>Tip: In some browsers you may need to activate an autocomplete 
+              function for this to work (Look under "Preferences" in the browser's menu).</strong></p>
+              <br>
+
+              <a href="#" class="btn">Click me to Climb Up!</a>
+        </div>
+      </div>
+
+        </div>
+        
+        <script>
+            $(document).ready(function () {
+              $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+              });
+            });
+          </script>
+    </body>
+    
+    </html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS QUIZ</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+ 
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<style>
+ 
+ body {
+	background: linear-gradient(-45deg, #333333, #CCCCCC);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+	color: #333333;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  .card {
+    width: 400px;
+    height: auto;
+  }
+
+  #box {
+    width: 100%;
+    height: 500px;
+
+  }
+
+  p {
+    margin-top: 5%;
+    font-size: 20px;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+  }
+
+  .nav-link:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+  }
+
+  #quieee {
+    /* background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7f7 100%); */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    margin: 0;
+    
+    
+  }
+
+  .quiz-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(100, 100, 100, 0.1);
+    margin-top: 100px;
+    width: 90%;
+    height: 80%;
+    overflow: hidden;
+
+  }
+
+  .quiz-header {
+    padding:1rem;
+
+  }
+
+  h2 {
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .multiple {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .multiple {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  .multiple label {
+    cursor: pointer;
+  }
+
+  
+
+  #submit {
+    background-color: lightblue;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 1.3rem;
+  }
+
+  #submit:hover {
+    background-color: #04adc4;
+  }
+
+  #submit:focus {
+    outline: none;
+  }
+
+  .choices {
+    font-size: 1.2rem;
+    color:black;
+    padding: 20px;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: white;
+    border:black solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px black;
+  }
+  .choices:hover{
+    background-color:black;
+    color:white;
+    border-radius: 10px;
+    border:white solid;
+  }
+
+  .my-swal-dialog-container {
+    width: 500px !important; 
+    height: 500px !important;
+  }
+#sheehs{
+    background-color:black;
+    color: white;   
+    font-size: 1.2rem;
+}
+
+#sheehs:hover{
+    background-color:white;
+    color: black;    
+    font-size: 1.2rem;
+}
+ 
+.game-question-container{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 25px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 10px 10px 5px black;
+}
+.game-question-container:hover{
+  background-color:black;
+    color:white;
+    border-radius: 10px;
+    border:white solid;
+}
+.game-question-container h1{
+    font-size: 2.1rem;
+    text-align: center;
+    padding: 3px;
+    
+}
+
+.game-options-container{
+    width: 80%;
+    height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-options-container span{
+    width: 45%;
+    height: 3rem;
+    border: 2px solid darkgray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+/* Hide the default radio button */
+input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+ 
+}
+
+@media(min-width : 300px) and (max-width : 350px){
+    .game-quiz-container{
+        width: 90%;
+        height: 80vh;
+     }
+     .quiz-container{
+        width: 100%;
+        height: 80vh;
+     }
+     .game-details-container h1{
+        font-size: 0.8rem;
+     }
+
+     .game-question-container{
+        height: 6rem;
+     }
+     .game-question-container h1{
+       font-size: 0.9rem;
+    }
+
+    .game-options-container span{
+        width: 90%;
+        height: 2.5rem;
+    }
+    .game-options-container span label{
+        font-size: 0.8rem;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+.btn{
+  background-color:black;
+    color: white;   
+    font-size: 1.2rem;
+}
+.btn:hover{
+  background-color:white;
+    color: black;    
+    font-size: 1.2rem;
+}
+
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-md  bg-dark navbar-dark fixed-top shadow shadow-info shadow-intensity-lg ">
+    <div class="container">
+      <a href="home.html" class="navbar-brand fw-bold text-white " style="font-family: Audiowide, sans-serif;">
+       STUDY <span class="text-white">BUD</span></a>
+        <a class="navbar-brand fw-bold text-white " style="font-family: Audiowide, sans-serif;">
+          CSS QUIZ<span class="text-white">BUD</span></a>
+        <!-- link para mag back sila sa page mo -->
+        <a href="CSS-QUIZ.html" class="navbar-brand fw-bold text-success" style="font-family: Audiowide, sans-serif;">
+          <!-- This is the back button, whereas you you will send it back to the last page it went -->
+          <i class="fa-solid fa-arrow-left"></i> BACK</a>
+    </div>
+
+    
+  </nav>
+  <header class="">
+  
+  </header>
+  <br>
+  <section id="quieee" >
+    
+
+
+    <div class="card col-md-6 quiz-container bg-success" id="quiz">
+
+      <div class="card-header quiz-header ">
+     
+        <div class="game-quiz-container">
+          <div class="game-question-container">
+              <h1 id="question">Question Text</h1> 
+          </div>
+       
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="multiple">
+                <li class="choices">
+                  <input type="radio" name="answer" id="a" class="answer">
+                  <label style="width: 85%" for="a" id="a_text">Answer A</label>
+                </li>
+                <li class="choices">
+                  <input type="radio" name="answer" id="b" class="answer">
+                  <label style="width: 85%" for="b" id="b_text">Answer B</label>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="multiple">
+                <li class="choices">
+                  <input type="radio" name="answer" id="c" class="answer">
+                  <label style="width: 85%" for="c" id="c_text">Answer C</label>
+                </li>
+                <li class="choices">
+                  <input type="radio" name="answer" id="d" class="answer">
+                  <label style="width: 85%" for="d" id="d_text">Answer D</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn m-2 btn-lg" style="width: 100%;" id="next"onclick="next()">NEXT</button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script> 
+
+  //quiz data array or the content of quiz
+  let quizData = [
+  {
+    question: "1. What does CSS stand for? ",
+    a: "Creative Style Sheets",
+    b: "Colorful Style Sheets",
+    c: "Cascading Style Sheets",
+    d: "Computer Style Sheets",
+    correct: "c",
+  },
+  {
+    
+    question: "2. Which is the correct CSS syntax? ",
+    a: "body {color: black;}",
+    b: "{body;color:black;}",
+    c: "{body:color=black;}",
+    d: "body:color=black;",
+    correct: "a",
+  },
+  {
+    question: "3. How do you insert a comment in a CSS file?",
+    a: "' this is a comment",
+    b: "// this is a comment //",
+    c: "// this is a comment",
+    d: "/* this is a comment */  ",
+    correct: "d",
+  },
+  {
+    question: "4. Which property is used to change the background color? ",
+    a: "color",
+    b: "background-color ",
+    c: "bgcolor",
+    d: "bg_color",
+    correct: "b",
+  },
+  {
+    question: "5. Which CSS property is used to change the text color of an element?",
+    a: "text-color",
+    b: "fgcolor",
+    c: "color",
+    d: "color_",
+    correct: "c",
+  },
+  {
+    question: "6. Which CSS property controls the text size?",
+    a: "text-size",
+    b: "font-style",
+    c: "font-size",
+    d: "text-style",
+    correct: "c",
+  },
+  {
+    question: "7. What is the correct CSS syntax for making all the <p> elements bold?",
+    a: "p {font-weight:bold;}",
+    b: "p {text-bold;}",
+    c: "p {text-size:bold;}",
+    d: "p {text=bold- size;}",
+    correct: "a",
+  },
+  {
+    question: "8. How do you display hyperlinks without an underline?",
+    a: "a {text-decoration:no-underline;}",
+    b: "a {underline:none;}",
+    c: "a {text-decoration:none;}",
+    d: "a {decoration:no-underline;}",
+    correct: "c",
+  },
+  {
+    question: "9. How do you make each word in a text start with a capital letter?",
+    a: "transform:capitalize",
+    b: "text-transform:capitalize",
+    c: "text-style:capitalize",
+    d: "You can't do that with CSS",
+    correct: "b",
+  },
+  {
+    question: "10. Which property is used to change the font of an element?",
+    a: "font-family",
+    b: "font-style",
+    c: "font-weight",
+    d: "change - font",
+    correct: "a",
+  },
+  {
+    question: "11. How do you select an element with id 'demo'?",
+    a: "#demo",
+    b: "demo",
+    c: ".demo",
+    d: "*demo",
+    correct: "a",
+  },
+  {
+    question: "12. How do you select elements with class name 'test'?",
+    a: "#test",
+    b: "test",
+    c: ".test",
+    d: "*test",
+    correct: "c",
+  },
+  {
+    question: "13. What is the default value of the position property?",
+    a: "fixed",
+    b: "absolute",
+    c: "relative",
+    d: "static",
+    correct: "d",
+  },
+  {
+    question: "14. How many layout modes were there before the Flexbox Layout Module was introduced in CSS?",
+    a: "1",
+    b: "2",
+    c: "3",
+    d: "4",
+    correct: "d",
+  },
+  {
+    question: "15. What is the general syntax of writing the var() function?",
+    a: "var(--name,value)",
+    b: "var(--name)",
+    c: "var(value)",
+    d: "var(value--name)",
+    correct: "a",
+  },
+  {
+    question: "16. What function is used to insert values of a CSS variable?",
+    a: "var()",
+    b: "var",
+    c: ".var",
+    d: "varchar()",
+    correct: "a",
+  },
+  {
+    question: "17. What function is used to insert values of a CSS variable?",
+    a: "var()",
+    b: "var",
+    c: ".var",
+    d: "varchar()",
+    correct: "a",
+  },
+  {
+    question: "18. The transparent keyword is equivalent to which RGBA() value in CSS?",
+    a: "RGBA(0,0,0,1)",
+    b: "RGBA(255,225,225,1)",
+    c: "RGBA(0,0,0,0)",
+    d: "RGBA(255,225,225,0)",
+    correct: "C",
+  },
+  {
+    question: "19. In how many ways can CSS be written in?",
+    a: "1",
+    b: "2",
+    c: "3",
+    d: "4",
+    correct: "C",
+  },
+  {
+    question: "20. What type of CSS is generally recommended for designing large web pages?",
+    a: "Inline",
+    b: "External",
+    c: "Internal",
+    d: "Exit",
+    correct: "B",
+  },
+  {
+    question: "21. Which HTML tag is used to declare internal CSS?",
+    a: "<style>",
+    b: "<link>",
+    c: "<script>",
+    d: "<var>",
+    correct: "a",
+  },
+  {
+    question: "22. How can we select an element with a specific ID in CSS?",
+    a: "#",
+    b: "//",
+    c: ".",
+    d: "<>",
+    correct: "a",
+  },
+  {
+    question: "23. How can we select an element with a specific Class in CSS?",
+    a: "#",
+    b: "//",
+    c: ".",
+    d: "<>",
+    correct: "c",
+  },
+  {
+    question: "24. How can we specify the spacing between each letter in a text in CSS?",
+    a: "alpha-spacing",
+    b: "letter-spacing",
+    c: "character-spacing",
+    d: "css-spacing",
+    correct: "b",
+  },
+  {
+    question: "25. Which of the following are valid ways to represent a colour in CSS?",
+    a: "a valid color name",
+    b: "RGB values",
+    c: "HEX values",
+    d: "All of the above",
+    correct: "d",
+  },
+  {
+    question: "26. We can make rounded borders around elements using which CSS element?",
+    a: "border-collapse",
+    b: "border-round",
+    c: "border-radius",
+    d: "border",
+    correct: "c",
+  },
+  {
+    question: "27. How can we set the maximum width of the elements content box using CSS?",
+    a: "height property",
+    b: "max-height property",
+    c: "max-width property",
+    d: "max=width property",
+    correct: "c",
+  },
+  {
+    question: "28.  Which CSS property is used to specify different border styles?",
+    a: "border-style",
+    b: "border.style",
+    c: "Both A and B",
+    d: "None of the above",
+    correct: "a",
+  },
+  {
+    question: "29.  Which of the following property specifies the look and design of an outline?",
+    a: "outline-style",
+    b: "outline.style",
+    c: "outline",
+    d: "Both A and B",
+    correct: "a",
+  },
+  {
+    question: "30.  Which of the following are valid CSS position property values?",
+    a: "static",
+    b: "relative",
+    c: "fixed",
+    d: "All of the above",
+    correct: "d",
+  },
+  {
+    question: "31.  Setting an inline-block in CSS requires which of the following properties?",
+    a: "color",
+    b: "block",
+    c: "display",
+    d: "text",
+    correct: "c",
+  },
+  {
+    question: "32.  Which of the following CSS property is used for controlling the layout?",
+    a: "display",
+    b: "block",
+    c: "color",
+    d: "inline",
+    correct: "a",
+  },
+  {
+    question: "33.  How are custom fonts defined using CSS?",
+    a: "@font-face rule",
+    b: "Custom fonts cannot be defined",
+    c: "src tags",
+    d: "All of the above",
+    correct: "a",
+  },
+  {
+    question: "34.  Which of the following components of the CSS box model are transparent?",
+    a: "Padding",
+    b: "Margin",
+    c: "Both A and B",
+    d: "None of the above",
+    correct: "a",
+  },
+  {
+    question: "35.  What value should be passed to the width parameter if we want an element, say a table, to span the entire width of the screen?",
+    a: "0%",
+    b: "100%",
+    c: "50%",
+    d: "25%",
+    correct: "b",
+  },
+  {
+    question: "36.  What are the uses of CSS pseudo-elements?",
+    a: "Style specified parts of an element",
+    b: "Style the first letter or line of an element",
+    c: "Insert content before or after the element",
+    d: "All of the above",
+    correct: "d",
+  },
+  {
+    question: "37.  Which of the following are units of relative length in CSS?",
+    a: "em",
+    b: "rem",
+    c: "vmax",
+    d: "All of the above",
+    correct: "d",
+  },
+  {
+    question: "38.  What parameter does the calc() function in CSS take?",
+    a: "A sentence",
+    b: "A mathematical expression",
+    c: "A number",
+    d: "All of the above",
+    correct: "b",
+  },
+  {
+    question: "39.  How can we add more importance to a property/value than normal?",
+    a: "important",
+    b: "bold",
+    c: "!important",
+    d: "None of the above",
+    correct: "c",
+  },
+  {
+    question: "40.  Which CSS property specifies the painting area of the background?",
+    a: "background-size",
+    b: "background-clip",
+    c: "background-image",
+    d: "background-area",
+    correct: "c",
+  }
+  
+];
+
+let quiz = document.getElementById('quiz');
+  let answerEls = document.querySelectorAll('.answer');
+  let questionEl = document.getElementById('question');
+  let a_text = document.getElementById('a_text');
+  let b_text = document.getElementById('b_text');
+  let c_text = document.getElementById('c_text');
+  let d_text = document.getElementById('d_text');
+  let nextbtn = document.getElementById('next')
+  let currentQuiz = 0;
+  let score = 0;
+  var duration = 0;
+  
+  loadQuiz();
+  
+  function loadQuiz() {
+    deselectAnswers();
+    let currentQuizData = quizData[currentQuiz];
+    questionEl.innerText = currentQuizData.question;
+    a_text.innerText = currentQuizData.a;
+    b_text.innerText = currentQuizData.b;
+    c_text.innerText = currentQuizData.c;
+    d_text.innerText = currentQuizData.d;
+  }
+  
+  answerEls.forEach(answerEl => {
+  answerEl.addEventListener('click', () => {
+    if (answerEl.id === quizData[currentQuiz].correct) {
+      answerEl.parentElement.style.backgroundColor = 'lightgreen';
+      score++;
+    } else {
+
+      answerEl.parentElement.style.backgroundColor = 'red';
+      // add the following code to change the background color of the correct answer
+      let correctAnswerEl = document.getElementById(quizData[currentQuiz].correct);
+      correctAnswerEl.parentElement.style.backgroundColor = 'lightgreen';
+    }
+      answerEls.forEach(answer => {
+        answer.disabled = true;
+      })
+    });
+  });
+  function next(){
+    let selectedAnswer = false;
+  answerEls.forEach(answer => {
+    if (answer.checked) {
+      selectedAnswer = true;
+    }
+  });
+
+
+  if (!selectedAnswer) {
+    Swal.fire(
+            'Please answer the question first!',
+            ``,
+            'error'
+          )
+    return;
+  }
+
+    answerEls.forEach(answer => {
+    answer.disabled = false;
+    answer.parentElement.style.backgroundColor = '';
+  });
+    currentQuiz++;
+  
+  if (currentQuiz < quizData.length) {
+      setTimeout(function () {
+        loadQuiz()
+      
+      }, 0700);
+  } else {
+      setTimeout(function () {
+          showResults();
+        
+      }, 0700);
+    
+  
+} 
+
+  }
+  
+  function showResults() {
+      quiz.innerHTML = `
+      <h2>Your Score: ${score}/${quizData.length}</h2>
+      <button id="sheehs" onclick="location.reload()">Reload</button>
+    `;
+      if (score === quizData.length) {
+          Swal.fire(
+            'Execellent!',
+            `Your score is ${score}/${quizData.length} !`,
+            'success'
+          )
+        }else{
+          Swal.fire(
+            'shit!',
+            `Your score is ${score}/${quizData.length} !`,
+            'error'
+          )
+      }
+  }
+  
+  function deselectAnswers() {
+      answerEls.forEach(answerEl => {
+      answerEl.parentElement.style.backgroundColor = '';
+      answerEl.checked = false;
+    });
+  
+   
+  }
+  </script>
+
+  </html>

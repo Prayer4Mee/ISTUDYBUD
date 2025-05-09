@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- nandito yung title ng page mga hangal ito yun -->
+  <link rel="icon" type="image/png" href="assets/ib.png" > <title>JavaScript Output</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" type="text/css" href="css/boostrap.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap JS -->
+  <script type="js/boostrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  /*
+    DEMO STYLE
+*/
+
+  @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+  }
+
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: black;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+  }
+
+  /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+  /*Makes the sidebar go left*/
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  .btn{
+    background-color: #212529;
+    color: white;
+  }
+  .btn:hover{
+    background-color:  #198754;
+    color:white;
+  }
+
+  /*The whole sidebar itself*/
+  #sidebar {
+    height: 100%;
+    background:   #212529;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  /*The reason why sidebar there*/
+  #sidebar.active {
+    margin-left: -250px;
+  }
+
+  /*sidebar yung header*/
+  #sidebar .sidebar-header {
+    text-align: center;
+    padding: 10px;
+    background: #212429;
+  }
+
+  /*<h2>*/
+  #sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+  }
+
+  /*<h2>*/
+  #sidebar ul p {
+    color: #fff;
+    padding: 10px;
+  }
+
+  /*The font of the content of the sidebar (limited only to list)*/
+  #sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  /*hover*/
+  #sidebar ul li a:hover {
+    color: white;
+    background: #198754;
+    transition: 0.5s;
+    letter-spacing: 1px;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #sidebar ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  /*Dropdown arrow*/
+  a[data-toggle="collapse"] {
+    position: relative;
+  }
+
+  .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background:   #212529;
+  }
+
+ 
+.nav-link:hover {
+color: black;
+}
+  /*The color of the download*/
+
+  /*the 2nd button*/
+  a.article,
+  a.article:hover {
+    background: #6d7fcc !important;
+    /*also the color of the text of the 2nd text*/
+    color: #fff !important;
+  }
+
+  /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+  #content {
+    width: 100%;
+    /*    padding: 20px;*/
+    min-height: 100vh;
+    transition: all 0.3s;
+  }
+
+  /*which is active right now (asang page ka right now?*/
+  #content ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #198754;
+    ;
+  }
+
+  #right {
+    float: right;
+  }
+
+  .tagcolor {
+    color: blue;
+    font-size: 20px;
+  }
+
+  .tagname {
+    color: red;
+    font-size: 20px;
+  }
+
+
+  /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+  /*The media object helps build complex and repetitive 
+components where some media is positioned alongside content 
+that doesn’t wrap around said media. Plus, it does this 
+with only two required classes thanks to flexbox.
+Oh gosh thank you! Ito pala yung kailangan ko*/
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -250px;
+    }
+
+    #sidebar.active {
+      margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <section id="sb">
+      <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+          <a href="../home.html"><h3 class="logo" style="font-family: Audiowide, sans-serif;">  ISTUDY<span
+            class="text-white">BUD</span></h2></a>
+        </div>
+
+        <ul class="list-unstyled components">
+          <i>
+            <p class="text-center ">Let us be your study buddy!</p>
+          </i>
+          <!-- JS LIST -->
+         <li class="">
+            <a href="#hIntro" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                class="fal fa-code"></i> JS TUTORIAL</a>
+          </li>
+          <ul class="collapse list-unstyled" id="hIntro">
+            <!-- kita mo yang class="active"? lagay mo yan kung nasaan sila na page right now -->
+            </li>
+            <li>
+              <a href="js_introduction.html">JS Introduction</a>
+            </li>
+            <li>
+              <a href="js_where_to.html">JS Where to</a>
+            </li>
+            <li class="active">
+              <a href="#">JS Output</a>
+            </li>
+              <a href="js_comments.html">JS Comments</a>
+            </li>
+            <li class="">
+              <a href="js_variables.html">JS Variables</a>
+            </li>
+          </ul>
+          </li>
+          <li class="">
+            <a href="/js-quiz.html">JS QUIZ</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Sidebar -->
+    <!-- Page Content  -->
+
+    <div id="content">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow shadow-info shadow-intensity-lg">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn btn-info bg-success">
+            <span><i class="fa fa-bars"></i></span>
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto h4 ">
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML sh1ts/html_editors.html">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML sh1ts/css_introduction.html">CSS</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">JAVASCRIPT</a>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Page</a>
+                </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+<!-- Ito yung sinasabi ni Pat na back at next -->
+      <div class="card shadow border-black m-5">
+        <div> <a class="btn " href="js_where_to.html"><i class="fa-solid fa-arrow-left"></i>  BACK</a>
+          <a class="btn " href="js_comments.html" id="right"><i class="fa-sharp fa-solid fa-arrow-right"></i>  NEXT</a>
+        </div>
+      </div>
+
+      <div id="content" class="p-4 p-md-5">
+        <br>
+        <div class="card shadow p-3">
+          <div class="card-body  ">
+            <dl class="row">
+              <dt class="h1 col-sm-3 mb-4">JavaScript Output</dt>
+              <dd class="h4 col-sm-9">
+                <figure class="text-end">
+                  <blockquote class="blockquote">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    World's largest web developer site, <cite title="Source Title">w3schools</cite>
+                  </figcaption>
+                </figure>
+              </dd>
+          </div>
+        </div>
+        <br>
+
+        <div class="card shadow p-3 mt-5">
+            <div class="card-body  ">
+              <h2 class="mb-4"> JavaScript Display Possibilities </script> </h2>
+              <p> One of many JavaScript HTML methods is <span class="tagcolor">
+                <p> JavaScript can "display" data in different ways: </p>
+                <ul>
+                  <li> Writing into an HTML element, using <span class="tagname"> innerHTML </span></li>
+                  <li> Writing into the HTML output using <span class="tagname"> document.write() </span></li>
+                  <li> Writing into an alert box, using <span class="tagname"> window.alert() </span></li>
+                  <li> Writing into the browser console, using <span class="tagname"> console.log() </span></li>
+                </ul>
+              </div>
+        </div>
+
+              <div class="card shadow p-3 mt-5">
+                <div class="card-body  ">
+                  <h2 class="mb-4"> Using innerHTML </script> </h2>
+                  <p> To access an HTML element, JavaScript can use the <span class="tagname"> document.getElementById(id) </span> method.</p>
+                  <p> The <span class="tagname"> id </span> attribute defines the HTML element. The 
+                    <span class="tagname"> innerHTML </span> property defines the HTML content: </p>
+                    <div class="card-body  ">
+                      <div class="card-group p-4 p-md-3">
+                        <div class="card">
+                          <div class="card shadow p-3 bg-success ">
+                            <div class="card bg-dark text-white">
+                              <div class="card-header">
+                                <H2 class="text-LEFT">Example</H2>
+                              </div>
+                              </div>
+                              
+                            <div class="card-body bg-light">
+                              <span class="tagcolor">
+                                <</span><span class="tagname">!DOCTYPE html</span>
+                                  <span class="tagcolor">></span>
+                                  <br>
+                                  <span class="tagcolor">
+                                    <</span><span class="tagname">html</span>
+                                      <span class="tagcolor">></span>
+                                      <br>
+                                      <span class="tagcolor">
+                                        <</span><span class="tagname">body</span>
+                                          <span class="tagcolor">></span>
+                                          <br>
+                                          <p><span class="tagcolor">
+                                            <</span><span class="tagname">h1</span>
+                                              <span class="tagcolor">></span> My First Web Page <span class="tagcolor">
+                                                <</span><span class="tagname">/h1</span>
+                                                  <span class="tagcolor">></span></p>
+                                                  
+                                                  <p><span class="tagcolor">
+                                                    <</span><span class="tagname">p</span>
+                                                      <span class="tagcolor">></span> My First Paragraph <span class="tagcolor">
+                                                        <</span><span class="tagname">/p</span>
+                                                          <span class="tagcolor">></span></p>
+                                                          
+                                                                  <br>
+
+                                                                  <span class="tagcolor">
+                                                                    <<span class="tagname">p id</span>
+                                                                    ="demo"><span class="tagcolor"><</span><span class="tagname">/p</span><span class="tagcolor">></span>
+
+                                                                    <br>
+                                                                    <span class="tagcolor">
+                                                                      <</span><span class="tagname">script</span>
+                                                                        <span class="tagcolor">></span>
+                                                                        <p>document.getElementById(<span class="tagname">"demo"</span>).innerHTML = <span class="tagname"> 5+6 ; </span></p>
+                                                                          <br>  
+                                                                          <span class="tagcolor">
+                                                                            <</span><span class="tagname">/script</span>
+                                                                              <span class="tagcolor">></span>
+                                                                              <br>
+
+                                                                              <span class="tagcolor">
+                                                                                <</span><span class="tagname">/body</span>
+                                                                                  <span class="tagcolor">></span>
+                                                                                  <br>
+                                                                                  <span class="tagcolor">
+                                                                                    <</span><span class="tagname">/html</span>
+                                                                                      <span class="tagcolor">></span>
+                                                                                    </div>
+                                                                                    <a href="js_editor12.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+              </div>
+              <p class="h3 bg-success-subtle"><strong> NOTE: Changing the innerHTML property of an HTML element 
+                is a common way to display data in HTML.</strong></p>
+
+                <div class="card shadow p-3 mt-5">
+                  <div class="card-body  ">
+                    <h2 class="mb-4"> Using document.write() </script> </h2>
+                    <p> For testing purposes, it is convenient to use <span class="tagname"> document.write() :</span></p>
+                <div class="card-body  ">
+                    <div class="card-group p-4 p-md-3">
+                      <div class="card">
+                        <div class="card shadow p-3 bg-success ">
+                          <div class="card bg-dark text-white">
+                            <div class="card-header">
+                              <H2 class="text-LEFT">Example</H2>
+                            </div>
+                            </div>
+
+                            <div class="card-body bg-light">
+                              <span class="tagcolor">
+                                <</span><span class="tagname">!DOCTYPE html</span>
+                                  <span class="tagcolor">></span>
+                                  <br>
+                                  <span class="tagcolor">
+                                    <</span><span class="tagname">html</span>
+                                      <span class="tagcolor">></span>
+                                      <br>
+                                      <span class="tagcolor">
+                                        <</span><span class="tagname">body</span>
+                                          <span class="tagcolor">></span>
+                                          <br>
+                                          <p><span class="tagcolor">
+                                            <</span><span class="tagname">h1</span>
+                                              <span class="tagcolor">></span> My First Web Page <span class="tagcolor">
+                                                <</span><span class="tagname">/h1</span>
+                                                  <span class="tagcolor">></span></p>
+                                                  
+                                                  <p><span class="tagcolor">
+                                                    <</span><span class="tagname">p</span>
+                                                      <span class="tagcolor">></span> My First Paragraph <span class="tagcolor">
+                                                        <</span><span class="tagname">/p</span>
+                                                          <span class="tagcolor">></span></p>
+                                                                  <br>
+                                                                    <span class="tagcolor">
+                                                                      <</span><span class="tagname">script</span>
+                                                                        <span class="tagcolor">></span>
+                                                                        <p>document.write(<span class="tagname"> 5+6</span>);</p>
+                                                                          <span class="tagcolor">
+                                                                            <</span><span class="tagname">/script</span>
+                                                                              <span class="tagcolor">></span>
+                                                                              <br>
+                                                                              <br>
+                                                                              <span class="tagcolor">
+                                                                                <</span><span class="tagname">/body</span>
+                                                                                  <span class="tagcolor">></span>
+                                                                                  <br>
+                                                                                  <span class="tagcolor">
+                                                                                    <</span><span class="tagname">/html</span>
+                                                                                      <span class="tagcolor">></span>
+                                                                                    </div>
+                                                                                    <a href="js_editor13.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                        <p class="h3 bg-success-subtle"><strong> NOTE: Using document.write() after an HTML document is loaded, 
+                          will delete all existing HTML:</strong></p>
+                     
+                        <div class="card-body  ">
+                          <div class="card-group p-4 p-md-3">
+                            <div class="card">
+                              <div class="card shadow p-3 bg-success ">
+                                <div class="card bg-dark text-white">
+                                  <div class="card-header">
+                                    <H2 class="text-LEFT">Example</H2>
+                                  </div>
+                                  </div>
+
+                                  <div class="card-body bg-light">
+                                    <span class="tagcolor">
+                                      <</span><span class="tagname">!DOCTYPE html</span>
+                                        <span class="tagcolor">></span>
+                                        <br>
+                                        <span class="tagcolor">
+                                          <</span><span class="tagname">html</span>
+                                            <span class="tagcolor">></span>
+                                            <br>
+                                            <span class="tagcolor">
+                                              <</span><span class="tagname">body</span>
+                                                <span class="tagcolor">></span>
+                                                <br>
+
+                                                <p><span class="tagcolor">
+                                                  <</span><span class="tagname">h1</span>
+                                                    <span class="tagcolor">></span> My First Web Page <span class="tagcolor">
+                                                      <</span><span class="tagname">/h1</span>
+                                                        <span class="tagcolor">></span></p>
+                                                        
+                                                        <p><span class="tagcolor">
+                                                          <</span><span class="tagname">p</span>
+                                                            <span class="tagcolor">></span> My First Paragraph <span class="tagcolor">
+                                                              <</span><span class="tagname">/p</span>
+                                                                <span class="tagcolor">></span></p>
+                                                                <br>
+                                                                <span class="tagcolor">
+                                                                  <<span class="tagname">button type</span>
+                                                                  ="button"<span class="tagcolor"></span> 
+                                                                  <span class="tagcolor">
+                                                                    <span class="tagname">onclick</span>
+                                                                    ="document.write(5 + 6)"><span class="tagcolor"></span> 
+                                                                    </span></span> Try it <span class="tagcolor">
+                                                                      <</span><span class="tagname">/button</span>
+                                                                        <span class="tagcolor">></span>
+                                                                        <br>
+                                                                        <br>
+                                                                        <span class="tagcolor">
+                                                                          <</span><span class="tagname">/body</span>
+                                                                            <span class="tagcolor">></span>
+                                                                            <br>
+                                                                            <span class="tagcolor">
+                                                                              <</span><span class="tagname">/html</span>
+                                                                                <span class="tagcolor">></span>
+                                                                              </div>
+                                                                              <a href="js_editor14.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                              </div>
+                              </div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                              <p class="h3 bg-success-subtle"><strong> NOTE: The document.write() method should only be used for testing.</strong></p>
+      
+                              <div class="card shadow p-3 mt-5">
+                                <div class="card-body  ">
+                                  <h2 class="mb-4"> Using window.alert() </script> </h2>
+                                  <p> You can use an alert box to display data :</span></p>
+                              <div class="card-body  ">
+                                  <div class="card-group p-4 p-md-3">
+                                    <div class="card">
+                                      <div class="card shadow p-3 bg-success ">
+                                        <div class="card bg-dark text-white">
+                                          <div class="card-header">
+                                            <H2 class="text-LEFT">Example</H2>
+                                          </div>
+                                          </div>
+
+                                          <div class="card-body bg-light">
+                                            <span class="tagcolor">
+                                              <</span><span class="tagname">!DOCTYPE html</span>
+                                                <span class="tagcolor">></span>
+                                                <br>
+                                                <span class="tagcolor">
+                                                  <</span><span class="tagname">html</span>
+                                                    <span class="tagcolor">></span>
+                                                    <br>
+                                                    <span class="tagcolor">
+                                                      <</span><span class="tagname">body</span>
+                                                        <span class="tagcolor">></span>
+                                                        <br>
+        
+                                                        <p><span class="tagcolor">
+                                                          <</span><span class="tagname">h1</span>
+                                                            <span class="tagcolor">></span> My First Web Page <span class="tagcolor">
+                                                              <</span><span class="tagname">/h1</span>
+                                                                <span class="tagcolor">></span></p>
+                                                                
+                                                                <p><span class="tagcolor">
+                                                                  <</span><span class="tagname">p</span>
+                                                                    <span class="tagcolor">></span> My First Paragraph <span class="tagcolor">
+                                                                      <</span><span class="tagname">/p</span>
+                                                                        <span class="tagcolor">></span></p>
+                                                                        <br>
+                                                                        <span class="tagcolor">
+                                                                          <</span><span class="tagname">script</span>
+                                                                            <span class="tagcolor">></span>
+                                                                            <p>document.alert(<span class="tagname"> 5+6</span>);</p>
+                                                                              <span class="tagcolor">
+                                                                                <</span><span class="tagname">/script</span>
+                                                                                  <span class="tagcolor">></span>
+                                                                                <br>
+                                                                                <br>
+                                                                                <span class="tagcolor">
+                                                                                  <</span><span class="tagname">/body</span>
+                                                                                    <span class="tagcolor">></span>
+                                                                                    <br>
+                                                                                    <span class="tagcolor">
+                                                                                      <</span><span class="tagname">/html</span>
+                                                                                        <span class="tagcolor">></span>
+                                                                                      </div>
+                                                                                      <a href="js_editor15.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <br>
+                                      <p> You can skip the <span class="tagname">window </span> keyword. </p>
+                                      <p> In JavaScript, the window object is the global scope object. This means that variables, properties, and methods 
+                                        by default belong to the window object. This also means that specifying the <span class="tagname">window </span> keyword is optional: </p>
+
+                                        <div class="card-body  ">
+                                          <div class="card-group p-4 p-md-3">
+                                            <div class="card">
+                                              <div class="card shadow p-3 bg-success ">
+                                                <div class="card bg-dark text-white">
+                                                  <div class="card-header">
+                                                    <H2 class="text-LEFT">Example</H2>
+                                                  </div>
+                                                  </div>
+        
+                                                  <div class="card-body bg-light">
+                                                    <span class="tagcolor">
+                                                      <</span><span class="tagname">!DOCTYPE html</span>
+                                                        <span class="tagcolor">></span>
+                                                        <br>
+                                                        <span class="tagcolor">
+                                                          <</span><span class="tagname">html</span>
+                                                            <span class="tagcolor">></span>
+                                                            <br>
+                                                            <span class="tagcolor">
+                                                              <</span><span class="tagname">body</span>
+                                                                <span class="tagcolor">></span>
+                                                                <br>
+                
+                                                                <p><span class="tagcolor">
+                                                                  <</span><span class="tagname">h1</span>
+                                                                    <span class="tagcolor">></span> My First Web Page <span class="tagcolor">
+                                                                      <</span><span class="tagname">/h1</span>
+                                                                        <span class="tagcolor">></span></p>
+                                                                        
+                                                                        <p><span class="tagcolor">
+                                                                          <</span><span class="tagname">p</span>
+                                                                            <span class="tagcolor">></span> My First Paragraph <span class="tagcolor">
+                                                                              <</span><span class="tagname">/p</span>
+                                                                                <span class="tagcolor">></span></p>
+                                                                                <br>
+                                                                                <span class="tagcolor">
+                                                                                  <</span><span class="tagname">script</span>
+                                                                                    <span class="tagcolor">></span>
+                                                                                    <p>alert(<span class="tagname"> 5+6</span>);</p>
+                                                                                      <span class="tagcolor">
+                                                                                        <</span><span class="tagname">/script</span>
+                                                                                          <span class="tagcolor">></span>
+                                                                                        <br>
+                                                                                        <br>
+                                                                                        <span class="tagcolor">
+                                                                                          <</span><span class="tagname">/body</span>
+                                                                                            <span class="tagcolor">></span>
+                                                                                            <br>
+                                                                                            <span class="tagcolor">
+                                                                                              <</span><span class="tagname">/html</span>
+                                                                                                <span class="tagcolor">></span>
+                                                                                              </div>
+                                                                                              <a href="js_editor16.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                              </div>
+                                </div>
+                              </div>
+                                    
+                                                                                              <div class="card shadow p-3 mt-5">
+                                                                                                <div class="card-body  ">
+                                                                                                  <h2 class="mb-4"> Using console.log() </script> </h2>
+                                                                                                  <p> For debugging purposes, you can call the <span class="tagname"> console.log()</span>
+                                                                                                    method in the browser to display data. </p>
+                                                                                              <div class="card-body  ">
+                                                                                                  <div class="card-group p-4 p-md-3">
+                                                                                                    <div class="card">
+                                                                                                      <div class="card shadow p-3 bg-success ">
+                                                                                                        <div class="card bg-dark text-white">
+                                                                                                          <div class="card-header">
+                                                                                                            <H2 class="text-LEFT">Example</H2>
+                                                                                                          </div>
+                                                                                                          </div>
+                                                                                                          <div class="card-body bg-light">
+                                                                                                            <span class="tagcolor">
+                                                                                                              <</span><span class="tagname">!DOCTYPE html</span>
+                                                                                                                <span class="tagcolor">></span>
+                                                                                                                <br>
+                                                                                                                <span class="tagcolor">
+                                                                                                                  <</span><span class="tagname">html</span>
+                                                                                                                    <span class="tagcolor">></span>
+                                                                                                                    <br>
+                                                                                                                    <span class="tagcolor">
+                                                                                                                      <</span><span class="tagname">body</span>
+                                                                                                                        <span class="tagcolor">></span>
+                                                                                                                        <br>
+                                                                                                                        <br>
+                                                                                                                        <span class="tagcolor">
+                                                                                                                          <</span><span class="tagname">script</span>
+                                                                                                                            <span class="tagcolor">></span>
+                                                                                                                            <p>console.log(<span class="tagname"> 5+6</span>);</p>
+                                                                                                                              <span class="tagcolor">
+                                                                                                                                <</span><span class="tagname">/script</span>
+                                                                                                                                  <span class="tagcolor">></span>
+                                                                                                                                <br>
+                                                                                                                                <br>
+                                                                                                                                <span class="tagcolor">
+                                                                                                                                  <</span><span class="tagname">/body</span>
+                                                                                                                                    <span class="tagcolor">></span>
+                                                                                                                                    <br>
+                                                                                                                                    <span class="tagcolor">
+                                                                                                                                      <</span><span class="tagname">/html</span>
+                                                                                                                                        <span class="tagcolor">></span>
+                                                                                                                                      </div>
+                                                                                                                                      <a href="js_editor17.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                    </div>
+                                                                                                                      </div>
+                                                                                                                   
+                                                                                                                          
+                                                                                                                                                                                    <div class="card shadow p-3 mt-5">
+                                                                                                                                                                                      <div class="card-body  ">
+                                                                                                                                                                                        <h2 class="mb-4"> JavaScript Print </script> </h2>
+                                                                                                                                                                                        <p> JavaScript does not have any print object or print methods. </p>
+                                                                                                                                                                                        <p> You cannot access output devices from JavaScript. </p>
+                                                                                                                                                                                        <p> The only exception is that you can call the <span class="tagname"> window.print()</span>
+                                                                                                                                                                                          method in the browser to print the content of the current window. </p>
+                                                                                                                                                                                    <div class="card-body  ">
+                                                                                                                                                                                        <div class="card-group p-4 p-md-3">
+                                                                                                                                                                                          <div class="card">
+                                                                                                                                                                                            <div class="card shadow p-3 bg-success ">
+                                                                                                                                                                                              <div class="card bg-dark text-white">
+                                                                                                                                                                                                <div class="card-header">
+                                                                                                                                                                                                  <H2 class="text-LEFT">Example</H2>
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                                <div class="card-body bg-light">
+                                                                                                                                                                                                  <span class="tagcolor">
+                                                                                                                                                                                                    <</span><span class="tagname">!DOCTYPE html</span>
+                                                                                                                                                                                                      <span class="tagcolor">></span>
+                                                                                                                                                                                                      <br>
+                                                                                                                                                                                                      <span class="tagcolor">
+                                                                                                                                                                                                        <</span><span class="tagname">html</span>
+                                                                                                                                                                                                          <span class="tagcolor">></span>
+                                                                                                                                                                                                          <br>
+                                                                                                                                                                                                          <span class="tagcolor">
+                                                                                                                                                                                                            <</span><span class="tagname">body</span>
+                                                                                                                                                                                                              <span class="tagcolor">></span>
+                                                                                                                                                                                                              <br>
+                                                                                                                                                                                                              <br>
+                                                                                                                                                                                                              <span class="tagcolor">
+                                                                                                                                                                                                                <<span class="tagname">button onclick</span>
+                                                                                                                                                                                                                ="window.print()"><span class="tagcolor"></span> 
+                                                                                                                                                                                                                </span>Print this page  <span class="tagcolor">
+                                                                                                                                                                                                                  <</span><span class="tagname">/button</span>
+                                                                                                                                                                                                                    <span class="tagcolor">></span>
+                                                                                                                                                                                                                  
+                                                                                                                                                                                                                  
+                                                                                                                                                                                                                      <br>
+                                                                                                                                                                                                                      <br>
+                                                                                                                                                                                                                      <span class="tagcolor">
+                                                                                                                                                                                                                        <</span><span class="tagname">/body</span>
+                                                                                                                                                                                                                          <span class="tagcolor">></span>
+                                                                                                                                                                                                                          <br>
+                                                                                                                                                                                                                          <span class="tagcolor">
+                                                                                                                                                                                                                            <</span><span class="tagname">/html</span>
+                                                                                                                                                                                                                              <span class="tagcolor">></span>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <a href="js_editor17.html" class="btn btn-dark btn-lg ">Try it Yourself!</a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <br>
+                                                                                                                                                                                                                            <a href="#" class="btn">Click me to Climb Up!</a>
+                                                                            
+        <script>
+            $(document).ready(function () {
+              $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+              });
+            });
+          </script>
+    </body>
+    
+    </html>

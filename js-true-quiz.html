@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS QUIZ</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+ 
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<style>
+ 
+ body {
+	background: linear-gradient(-45deg, #333333, #CCCCCC);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+	color: #333333;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  .card {
+    width: 400px;
+    height: auto;
+  }
+
+  #box {
+    width: 100%;
+    height: 500px;
+
+  }
+
+  p {
+    margin-top: 5%;
+    font-size: 20px;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+  }
+
+  .nav-link:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+  }
+
+  #quieee {
+    /* background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7f7 100%); */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    margin: 0;
+    
+    
+  }
+
+  .quiz-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(100, 100, 100, 0.1);
+    margin-top: 100px;
+    width: 90%;
+    height: 80%;
+    overflow: hidden;
+
+  }
+
+  .quiz-header {
+    padding:1rem;
+
+  }
+
+  h2 {
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .multiple {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .multiple {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  .multiple label {
+    cursor: pointer;
+  }
+
+  
+
+  #submit {
+    background-color: lightblue;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 1.3rem;
+  }
+
+  #submit:hover {
+    background-color: #04adc4;
+  }
+
+  #submit:focus {
+    outline: none;
+  }
+
+  .choices {
+    font-size: 1.2rem;
+    color:black;
+    padding: 20px;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: white;
+    border:black solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px black;
+  }
+  .choices:hover{
+    background-color:black;
+    color:white;
+    border-radius: 10px;
+    border:white solid;
+  }
+
+  .my-swal-dialog-container {
+    width: 500px !important; 
+    height: 500px !important;
+  }
+#sheehs{
+    background-color:black;
+    color: white;   
+    font-size: 1.2rem;
+}
+
+#sheehs:hover{
+    background-color:white;
+    color: black;    
+    font-size: 1.2rem;
+}
+ 
+.game-question-container{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 25px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 10px 10px 5px black;
+}
+.game-question-container:hover{
+  background-color:black;
+    color:white;
+    border-radius: 10px;
+    border:white solid;
+}
+.game-question-container h1{
+    font-size: 2.1rem;
+    text-align: center;
+    padding: 3px;
+    
+}
+
+.game-options-container{
+    width: 80%;
+    height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-options-container span{
+    width: 45%;
+    height: 3rem;
+    border: 2px solid darkgray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+/* Hide the default radio button */
+input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+ 
+}
+
+@media(min-width : 300px) and (max-width : 350px){
+    .game-quiz-container{
+        width: 90%;
+        height: 80vh;
+     }
+     .quiz-container{
+        width: 100%;
+        height: 80vh;
+     }
+     .game-details-container h1{
+        font-size: 0.8rem;
+     }
+
+     .game-question-container{
+        height: 6rem;
+     }
+     .game-question-container h1{
+       font-size: 0.9rem;
+    }
+
+    .game-options-container span{
+        width: 90%;
+        height: 2.5rem;
+    }
+    .game-options-container span label{
+        font-size: 0.8rem;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+.btn{
+  background-color:black;
+    color: white;   
+    font-size: 1.2rem;
+}
+.btn:hover{
+  background-color:white;
+    color: black;    
+    font-size: 1.2rem;
+}
+
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-md  bg-dark navbar-dark fixed-top shadow shadow-info shadow-intensity-lg ">
+    <div class="container">
+      <a href="home.html" class="navbar-brand fw-bold text-white " style="font-family: Audiowide, sans-serif;">
+       STUDY <span class="text-white">BUD</span></a>
+        <a class="navbar-brand fw-bold text-white " style="font-family: Audiowide, sans-serif;">
+          JS QUIZ<span class="text-white">BUD</span></a>
+        <!-- link para mag back sila sa page mo -->
+        <a href="js-quiz.html" class="navbar-brand fw-bold text-success" style="font-family: Audiowide, sans-serif;">
+          <!-- This is the back button, whereas you you will send it back to the last page it went -->
+          <i class="fa-solid fa-arrow-left"></i> BACK</a>
+    </div>
+
+    
+  </nav>
+  <header class="">
+  
+  </header>
+  <br>
+  <section id="quieee" >
+    
+
+
+    <div class="card col-md-6 quiz-container bg-success" id="quiz">
+
+      <div class="card-header quiz-header ">
+     
+        <div class="game-quiz-container">
+          <div class="game-question-container">
+              <h1 id="question">Question Text</h1> 
+          </div>
+       
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="multiple">
+                <li class="choices">
+                  <input type="radio" name="answer" id="a" class="answer">
+                  <label style="width: 85%" for="a" id="a_text">Answer A</label>
+                </li>
+                <li class="choices">
+                  <input type="radio" name="answer" id="b" class="answer">
+                  <label style="width: 85%" for="b" id="b_text">Answer B</label>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="multiple">
+                <li class="choices">
+                  <input type="radio" name="answer" id="c" class="answer">
+                  <label style="width: 85%" for="c" id="c_text">Answer C</label>
+                </li>
+                <li class="choices">
+                  <input type="radio" name="answer" id="d" class="answer">
+                  <label style="width: 85%" for="d" id="d_text">Answer D</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn m-2 btn-lg" style="width: 100%;" id="next"onclick="next()">NEXT</button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script> 
+
+  //quiz data array or the content of quiz
+  let quizData = [
+  {
+    question: "1. Javascript is an _______ language?",
+    a: "Object-oriented",
+    b: "Object-based",
+    c: "Procedural",
+    d: "Object-orient",
+    correct: "a",
+  },
+  {
+    question: "2. Which of the following keywords is used to define a variable in Javascript?",
+    a: "var",
+    b: "let",
+    c: "Both A and B",
+    d: "None of the above",
+    correct: "c",
+  },
+  {
+    question: "3. Which of the following methods is used to access HTML elements using Javascript?",
+    a: "getElementbyId()",
+    b: "getElementByclassName()",
+    c: "getelementbyclassId()",
+    d: "Both A and B",
+    correct: "d",
+  },
+  {
+    question: "4. Which of the following methods can be used to display data in some form using Javascript?",
+    a: "document.write()",
+    b: "console.log()",
+    c: "window.alert()",
+    d: "All of the above",
+    correct: "d",
+  },
+  {
+    question: "5. How can a datatype be declared to be a constant type?",
+    a: "var",
+    b: "const",
+    c: "let",
+    d: "cons",
+    correct: "b",
+  },
+  {
+    question: "6. What keyword is used to check whether a given property is valid or not?",
+    a: "in",
+    b: "is in",
+    c: "exists",
+    d: "lies",
+    correct: "a",
+  },
+  {
+    question: "7. When an operator’s value is NULL, the typeof returned by the unary operator is:",
+    a: "Boolean",
+    b: "Undefined",
+    c: "Object",
+    d: "Integer",
+    correct: "c",
+  },
+  {
+    question: "8. What is the output of the following code snippet? print(NaN === NaN);",
+    a: "true",
+    b: "false",
+    c: "error",
+    d: "undefined",
+    correct: "b",
+  },
+  {
+    question: "9. What will be the output of the following code snippet? print(typeof(NaN));",
+    a: "object",
+    b: "string",
+    c: "undefined",
+    d: "number",
+    correct: "d",
+  },
+  {
+    question: "10. What does the ‘toLocateString()’ method do in JS?",
+    a: "Returns a localised object representation",
+    b: "Returns a parsed string",
+    c: "Returns a localized string representation of an object",
+    d: "None of the above",
+    correct: "c",
+  },
+  {
+    question: "11. The process in which an object or data structure is translated into a format suitable for transferral over a network, or storage is called?",
+    a: "Object Serialization",
+    b: "Object Encapsulation",
+    c: "Object Inheritance",
+    d: "None of the above",
+    correct: "a",
+  },
+  {
+    question: "12. Which function is used to serialize an object into a JSON string in Javascript?",
+    a: "Stringify()",
+    b: "parse()",
+    c: "convert()",
+    d: "None of the above",
+    correct: "a",
+  },
+  {
+    question: "13. The 3 basic object attributes in Javascript are:",
+    a: "class, prototype, object's parameters",
+    b: "class, prototype, object's extensible flag",
+    c: "class, parameters, object's extensible flag",
+    d: "class, native object, interfaces and object's extensible flag",
+    correct: "b",
+  },
+  {
+    question: "14. Which of the following are closures in Javascript?",
+    a: "Variables",
+    b: "Functions",
+    c: "Objects",
+    d: "All of the above",
+    correct: "d",
+  },
+  {
+    question: "15. Which of the following is not a Javascript framework?",
+    a: "node",
+    b: "Vue",
+    c: "React",
+    d: "Cassandra",
+    correct: "d",
+  },
+  {
+    question: "16. What keyword is used to declare an asynchronous function in Javascript?",
+    a: "async",
+    b: "await",
+    c: "setTimeout",
+    d: "awit",
+    correct: "a",
+  },
+  {
+    question: "17. How to stop an interval timer in Javascript?",
+    a: "clearInterval",
+    b: "clearTimer",
+    c: "intervalOver",
+    d: "intervalTimer",
+    correct: "a",
+  },
+  {
+    question: "18. How do we write a comment in javascript?",
+    a: "/* */",
+    b: "//",
+    c: "#",
+    d: "**/",
+    correct: "b",
+  },
+  {
+    question: "19. Which of the following are not server-side Javascript objects?",
+    a: "Date",
+    b: "FileUpload",
+    c: "Function",
+    d: "All of the above",
+    correct: "d",
+  },
+  {
+    question: "20. Inside which HTML element do we put the JavaScript?",
+    a: "<script>  ",
+    b: "<javascript>",
+    c: "<js>",
+    d: "<scripting>",
+    correct: "a",
+  },
+  {
+    question: "21. How to write an IF statement in JavaScript?",
+    a: "if i == 5 then",
+    b: "if i = 5 then",
+    c: "if i = 5",
+    d: "if (i == 5)",
+    correct: "d",
+  },
+  {
+    question: "22. How to write an IF statement for executing some code if i is NOT equal to 5?",
+    a: "if (i != 5)",
+    b: "if i <> 5",
+    c: "if (i <> 5)",
+    d: "if i =! 5 then",
+    correct: "a",
+  },
+  {
+    question: "23. How does a FOR loop start?",
+    a: "for i = 1 to 5",
+    b: "for (i = 0; i <= 5)",
+    c: "for (i = 0; i <= 5; i++)",
+    d: "for (i <= 5; i++)",
+    correct: "c",
+  },
+  {
+    question: "24. How do you round the number 7.25, to the nearest integer?",
+    a: "round(7.25)",
+    b: "Math.round(7.25)  ",
+    c: "Math.rnd(7.25)",
+    d: "rnd(7.25)",
+    correct: "b",
+  },
+  {
+    question: "25. Which event occurs when the user clicks on an HTML element?",
+    a: "onchange",
+    b: "onclick",
+    c: "onmouseclick",
+    d: "onmouseover",
+    correct: "b",
+  },
+  {
+    question: "26. Which operator is used to assign a value to a variable?",
+    a: "x",
+    b: "-",
+    c: "*",
+    d: "=",
+    correct: "d",
+  },
+  {
+    question: "27. What is JavaScript",
+    a: "a web browser",
+    b: "a very popular programming language",
+    c: "an operating system",
+    d: "All of the above",
+    correct: "b",
+  },
+  {
+    question: "28. In reference to an object, color, height, weight, and name are all example of: ",
+    a: "methods",
+    b: "properties",
+    c: "variables",
+    d: "nouns",
+    correct: "b",
+  },
+  {
+    question: "29. What built-in property is used to count the number of characters in an object's string property? ",
+    a: "write",
+    b: "width",
+    c: "length",
+    d: "size",
+    correct: "c",
+  },
+  {
+    question: "30. What is DOM? ",
+    a: "Definitive Object Model",
+    b: "Document Orientation Model",
+    c: "Document Object Model",
+    d: "Definitive Orientation Model",
+    correct: "c",
+  },
+  {
+    question: "31. What is the syntax for creating a new object in JavaScript? ",
+    a: "var objectName = new Object();",
+    b: "var objectName = {};",
+    c: "var objectName = Object.create();",
+    d: "Both a and b",
+    correct: "d",
+  },
+  {
+    question: "32. What is the difference between == and === in JavaScript? ",
+    a: "Both compare values and types",
+    b: "== only compares values, while === compares both values and types",
+    c: "=== only compares values, while == compares both values and types",
+    d: "None of the above",
+    correct: "b",
+  },
+  {
+    question: "33. Which of the following is not a valid JavaScript data type? ",
+    a: "String",
+    b: "Number",
+    c: "Float",
+    d: "Boolean",
+    correct: "c",
+  },
+  {
+    question: "34. Which of the following is not a JavaScript data type? ",
+    a: "String",
+    b: "Number",
+    c: "Float",
+    d: "array",
+    correct: "d",
+  },
+  {
+    question: "35. What is the correct way to access the first element in an array? ",
+    a: "array.first()",
+    b: "array[0]",
+    c: "array[1]",
+    d: "array[2]",
+    correct: "b",
+  },
+  {
+    question: "36. Which keyword is used to exit a loop in JavaScript? ",
+    a: "exit",
+    b: "break",
+    c: "return",
+    d: "continue",
+    correct: "b",
+  },
+  {
+    question: "37. What is the result of 5 % 2? ",
+    a: "2.5",
+    b: "2",
+    c: "1",
+    d: "0.5",
+    correct: "a",
+  },
+  {
+    question: "38. Which of the following is not a comparison operator in JavaScript?",
+    a: "==",
+    b: "!=",
+    c: "===",
+    d: "++",
+    correct: "d",
+  },
+  {
+    question: "39. What is the result of 2 + 2 * 2?",
+    a: "6",
+    b: "8",
+    c: "10",
+    d: "16",
+    correct: "b",
+  },
+  {
+    question: "40. Which of the following is not a logical operator in JavaScript?",
+    a: "&&",
+    b: "ll",
+    c: "!",
+    d: "&",
+    correct: "d",
+  }
+  
+];
+
+let quiz = document.getElementById('quiz');
+  let answerEls = document.querySelectorAll('.answer');
+  let questionEl = document.getElementById('question');
+  let a_text = document.getElementById('a_text');
+  let b_text = document.getElementById('b_text');
+  let c_text = document.getElementById('c_text');
+  let d_text = document.getElementById('d_text');
+  let nextbtn = document.getElementById('next')
+  let currentQuiz = 0;
+  let score = 0;
+  var duration = 0;
+  
+  loadQuiz();
+  
+  function loadQuiz() {
+    deselectAnswers();
+    let currentQuizData = quizData[currentQuiz];
+    questionEl.innerText = currentQuizData.question;
+    a_text.innerText = currentQuizData.a;
+    b_text.innerText = currentQuizData.b;
+    c_text.innerText = currentQuizData.c;
+    d_text.innerText = currentQuizData.d;
+  }
+  
+  answerEls.forEach(answerEl => {
+  answerEl.addEventListener('click', () => {
+    if (answerEl.id === quizData[currentQuiz].correct) {
+      answerEl.parentElement.style.backgroundColor = 'lightgreen';
+      score++;
+    } else {
+
+      answerEl.parentElement.style.backgroundColor = 'red';
+      // add the following code to change the background color of the correct answer
+      let correctAnswerEl = document.getElementById(quizData[currentQuiz].correct);
+      correctAnswerEl.parentElement.style.backgroundColor = 'lightgreen';
+    }
+      answerEls.forEach(answer => {
+        answer.disabled = true;
+      })
+    });
+  });
+  function next(){
+    let selectedAnswer = false;
+  answerEls.forEach(answer => {
+    if (answer.checked) {
+      selectedAnswer = true;
+    }
+  });
+
+
+  if (!selectedAnswer) {
+    Swal.fire(
+            'Please answer the question first!',
+            ``,
+            'error'
+          )
+    return;
+  }
+
+    answerEls.forEach(answer => {
+    answer.disabled = false;
+    answer.parentElement.style.backgroundColor = '';
+  });
+    currentQuiz++;
+  
+  if (currentQuiz < quizData.length) {
+      setTimeout(function () {
+        loadQuiz()
+      
+      }, 0700);
+  } else {
+      setTimeout(function () {
+          showResults();
+        
+      }, 0700);
+    
+  
+} 
+
+  }
+  
+  function showResults() {
+      quiz.innerHTML = `
+      <h2>Your Score: ${score}/${quizData.length}</h2>
+      <button id="sheehs" onclick="location.reload()">Reload</button>
+    `;
+      if (score === quizData.length) {
+          Swal.fire(
+            'Execellent!',
+            `Your score is ${score}/${quizData.length} !`,
+            'success'
+          )
+        }else{
+          Swal.fire(
+            'shit!',
+            `Your score is ${score}/${quizData.length} !`,
+            'error'
+          )
+      }
+  }
+  
+  function deselectAnswers() {
+      answerEls.forEach(answerEl => {
+      answerEl.parentElement.style.backgroundColor = '';
+      answerEl.checked = false;
+    });
+  
+   
+  }
+  </script>
+
+  </html>

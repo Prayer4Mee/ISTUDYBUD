@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/ib.png">
+  <title> HOME PAGE </title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" type="text/css" href="a.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
+  <link rel="stylesheet" href="https://unpkg.com/open-props" />
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript"
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<style>
+  nav .navbar-brand {
+    font-size: 25px;
+  }
+
+  .carousel-inner img {
+    opacity: 0.2;
+  }
+
+  .card i {
+    font-size: 50px;
+  }
+
+  /* MAIN */
+
+  .home h3 {
+
+    font-size: 5.4rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .home h2 {
+    font-size: 5.4rem;
+    font-weight: 700;
+    line-height: 0.6;
+  }
+
+  .home h6 {
+    font-size: 2.4rem;
+    line-height: 2;
+  }
+
+  .home button {
+    height: 55px;
+    width: 290px;
+  }
+
+  .learn h2 {
+    font-size: 5.4rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .learn table th {
+    border: none !important;
+  }
+
+  .about p {
+    text-align: justify;
+  }
+
+  .card-body {
+    color: black;
+    background-color: white;
+    /* background-color:#198754; */
+  }
+
+  .card-body:hover {
+    color: white;
+    background-color: #198754;
+  }
+
+  .modal-dialog {
+    height: 50%;
+    width: 50%;
+    margin: auto;
+  }
+
+  /*Modal header
+color - text color
+background-color - background color *zzzzz
+*/
+  .modal-header {
+    color: white;
+    background-color: #007bff;
+  }
+
+  /*Textarea "Alexa play OMG by Jeans"*/
+  textarea {
+    border: none;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+    outline: 0px !important;
+  }
+
+  /*Button direction, ito yung sa html mo na give us feedback*/
+  /* .openmodal{
+    margin-left: 35%;
+    width: 25%;
+    margin-top: 25%;
+} */
+  /*color of the feedback icon*/
+  .icon1 {
+    color: #007bff;
+  }
+
+  /*button centered*/
+
+
+  /*I dunno*/
+  input {
+    color: #007bff;
+  }
+
+
+
+  /*Star Rating Part*/
+
+  .rate {
+
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+  }
+
+
+  /*
+display - put the stars on the right/center
+flex-direction - rate from the direction of
+left to right
+justify-content - center the stars 
+*/
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+  }
+
+  /*hide radio buttons
+Stars only
+*/
+  .rating>input {
+    display: none;
+  }
+
+  /*Stars style
+position - i dunno, pero according kay w3school
+hindi makakapasok yung ibang content eh
+width - distance between the stars
+font-size - size of the stars
+font-weight - i dunno kung anue nagagawa eh
+color: the color of the stars, filled or not
+btw - ang ganda ng kulay red
+cursor - tignan mo cursor ng mouse mo
+*/
+  .rating>label {
+    position: relative;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 2em;
+    font-size: 60px;
+    font-weight: 300;
+    color: #FFD600;
+    cursor: pointer
+  }
+
+  /*
+content - when you click the stars
+it will show different color
+position - positioning of the stars
+opacity - dictate if the star is colored
+or not. Parang auto
+*/
+  .rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+  }
+
+  /*Hover over the stars*/
+  .rating>label:hover:before,
+  .rating>label:hover~label:before {
+    opacity: 1 !important
+  }
+
+  /*checked*/
+  .rating>input:checked~label:before {
+    opacity: 1
+  }
+
+  .rating:hover>input:checked~label:before {
+    opacity: 0.4
+  }
+
+  /*I'm complely clueless, wala toh, remove mo nalang*/
+  /*.buttons{
+	top: 36px;
+    position: relative;
+}*/
+</style>
+
+<body>
+  <main>
+    <nav class="navbar navbar-expand-md py-3 bg-dark navbar-dark fixed-top shadow shadow-info shadow-intensity-lg "
+      role="navigation">
+      <!-- Navbar Header -->
+      <div class="container">
+        <a href="../home.html" class="navbar-brand fw-bold " style="font-family: Audiowide, sans-serif;"> ISTUDY<span
+            class="text-white">BUD</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ms-auto fw-bold">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#learn">Learn with us</a>
+            </li>
+           
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#faqs">FAQs</a>
+            </li>
+
+          
+
+            <!-- <div class="dropdown">
+              <a class="nav-link mx-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Contact
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#contact"><i class="bi bi-facebook"></i> Facebook</a></li>
+                <li><a class="dropdown-item" href="#contact"><i class="bi bi-twitter"></i> Twitter</a></li>
+                <li><a class="dropdown-item" href="#contact"><i class="bi bi-instagram"></i> Instagram</a></li>
+                <li><a class="dropdown-item" href="#contact"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+              </ul> -->
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Page -->
+
+    <section id="home" class=" home bg-dark">
+      <div class="container py-5">
+        <div class="row py-5">
+          <!-- START THE CONTENT FOR THE INTRO  -->
+          <div class="col-md py-5  mr-auto text-light">
+            <h3>LEARN</h3>
+            <h2 class="font-weight-normal"><small> TO CODE</small></h2>
+            <h6>WEB DEVELOPER</h6>
+            <a href="main_page.html"><button type="button"
+                class="btn btn-outline-success rounded-pill btn-rounded mt-3">LEARN NOW
+                <span><i class="fas fa-arrow-right"></i></span>
+              </button></a>
+          <a href="editor.html"><button type="button" class="btn btn-outline-success rounded-pill btn-rounded mt-3"> TRY OUR COMPILER
+              <span><i class="fas fa-arrow-right"></i></span>
+            </button></a>
+            <button type="button" class="btn btn-outline-success rounded-pill btn-rounded mt-3" data-toggle="modal"
+              data-target="#myModal">RATE US
+              <span><i class="fas fa-arrow-right"></i></span>
+            </button></a>
+          </div>
+          
+          <div class="col-md py-5 ">
+            <img class="img-fluid " src="bg.png" data-aos="fade-left" data-aos-anchor="#nav" data-aos-offset="500"
+              data-aos-duration="500" alt="Responsive image">
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320">
+        <path fill="#ffffff" fill-opacity="1"
+          d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+      </svg> -->
+    </section>
+
+
+    <!-- #6c757d -->
+    <section id="learn" class="learn bg-dark text-light ">
+      <div class="container py-5">
+        <div class="text-center mb-4" data-aos="zoom-in-up">
+          <h1>LEARN WITH US</h1>
+          <hr class="mx-auto w-75 bg-light">
+        </div>
+
+        <div class="container ">
+          <div class="row ">
+
+            <div class="col-md-4 ">
+              <div class="card-deck">
+                <div class="card" style="width:300px" data-aos="fade-left">
+                  <a href="#">
+                    <img class="img-fluid" src="assets/h.jpg" alt="html" alt=""></a>
+                  </a>
+                  <div class="card-body">
+
+                    <p class="font-weight-normal text-justify">It is a standard markup language for web page creation.
+                      It allows the creation and structure of sections, paragraphs, and links using HTML elements (the
+                      building blocks of a web page) such as tags and attributes. </p>
+                  </div><!-- END CARD-BODY -->
+
+                </div><!-- END CARD -->
+
+              </div><!-- END CARD DECK -->
+            </div><!-- END CONTAINER -->
+
+
+            <div class="col-md-4">
+              <!-- <div class="container"> -->
+              <div class="card-deck ">
+                <div class="card d-grid" style="width:300px" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                  <a href="#">
+                    <img class="img-fluid" src="assets/c.jpg"></a>
+
+
+                  <div class="card-body  btn-outline-success">
+
+
+                    <p class="font-weight-normal text-justify">
+                      the language for describing the presentation of Web pages, including colors, layout, and fonts. It
+                      allows one to adapt the presentation to different types of devices, such as large screens, small
+                      screens, or printers.
+                    </p>
+                  </div><!-- END CARD -->
+
+                </div><!-- END CARD DECK -->
+              </div><!-- END CONTAINER -->
+            </div>
+<!-- 
+            flex-row flex-nowrap -->
+            <div class="col-md-4">
+              <!-- <div class="container"> -->
+              <div class="card-deck">
+                <div class="card" style="width:300px" data-aos="fade-right">
+                  <a href="#">
+                    <img class="img-fluid" src="assets/j.jpg" alt="Card image cap"></a>
+
+
+                  <div class="card-body  btn-outline-success">
+
+
+                    <p class="font-weight-normal text-justify">
+                      a dynamic programming language that's used for web development, in web applicationsand lots more.
+                      It allows to implement dynamic features on web pages that cannot
+                      be done with only HTML and CSS.</p>
+                  </div><!-- END CARD -->
+
+                </div><!-- END CARD DECK -->
+              </div><!-- END CONTAINER -->
+            </div>
+          </div>
+
+          </div>
+        </div>
+    </section>
+
+
+
+    <section class="about pt-5 bg-dark text-light" id="about">
+      <div class="container p-5">
+        <div class="text-center mb-4" data-aos="zoom-in-up">
+          <h1>ABOUT US</h1>
+          <hr class="mx-auto w-75 bg-light">
+        </div>
+        <div class="container p-5 bg-dark">
+          <div class="row align-items-center">
+            <div class="col-md p-3 text-light" data-aos="fade-up-right">
+              <h2>ABOUT ME</h2>
+              <p class="lead ">the IStudyBud, will be utilized for HTML-based lectures and exercises. We propose
+                providing an accessible and convenient educational platform for individuals who do not have access to
+                programming education. Additionally, the program delivers a boost of self-esteem and confidence to the
+                people who uses this platform. Offline learning and exercises will provide knowledge and a cognitive
+                boost with mental workouts in the rising and developing educational system and IT industry, which is
+                significant for individuals who need it. </p>
+            </div>
+
+            <div class="col-md" data-aos="fade-up-left">
+              <img class="img-fluid rounded float-end"
+                src="https://assets-global.website-files.com/5f15530648874c5f977e91c2/637ef1f502c0f83324cbf1ad_ABM%20College%20Web%20developer%20main.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Frequently Asked Questions -->
+
+    <section class="pt-5 bg-dark text-light" id="faqs">
+      <div class="container p-5 ">
+        <div class="text-center mb-4" data-aos="zoom-in-up">
+          <h1>Frequently Asked Questions</h1>
+          <hr class="mx-auto w-75 bg-light">
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="accordion " id="accordionFlushExample" data-aos="flip-up">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"><i
+                      class="bi bi-patch-question text-primary mx-1"></i>Accordion Item #1
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                    the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    <i class="bi bi-patch-question text-primary mx-1"></i>Accordion Item #2
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                    the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
+                    this being filled with some actual content.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <i class="bi bi-patch-question text-primary mx-1"></i>Accordion Item #3
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                    the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                    exciting happening here in terms of content, but just filling up the space to make it look, at
+                    least at first glance, a bit more representative of how this would look in a real-world
+                    application.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="myModal" class="modal fade" role="dialog">
+      <!--Modal-->
+      <div class="modal-dialog">
+        <!--Modal Content-->
+        <div class="modal-content">
+          <!-- Modal The Header-->
+          <div class="modal-header bg-success">
+            <h3>Feedback</h3>
+
+            <!--Close Button-->
+            <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+          </div>
+          <!-- End of the Header -->
+
+          <!-- Modal Upper Body-->
+          <!-- The icon feedback -->
+          <div class="modal-body text-center">
+            <i class="far fa-file-alt fa-6x mb-3 animated rotateIn icon1 " style="color:#198754"></i>
+            <!-- End of icon feedback -->
+            <h3>Please rate us</h3>
+          </div>
+          <!-- End of Upper Body -->
+
+          <!-- Star Ratings-->
+          <div class="rating">
+            <!-- Stars are from right to left, 5=>1 -->
+            <!-- 5th Star -->
+            <input type="radio" name="rating" value="5" id="5">
+            <label for="5">☆</label>
+            <!-- 4th star -->
+            <input type="radio" name="rating" value="4" id="4">
+            <label for="4">☆</label>
+            <!-- 3rd Star -->
+            <input type="radio" name="rating" value="3" id="3">
+            <label for="3">☆</label>
+            <!-- 2nd Star -->
+            <input type="radio" name="rating" value="2" id="2">
+            <label for="2">☆</label>
+            <!-- 1st Star -->
+            <input type="radio" name="rating" value="1" id="1">
+            <label for="1">☆</label>
+          </div>
+          <!-- End of the Star Ratings -->
+
+
+          <!--Start of the Text Feedback-->
+          <div class="text-center">
+            <hr>
+            <!-- How instead of what -->
+            <h3>How could we improve?</h3>
+            <hr>
+          </div>
+
+          <textarea type="textarea" placeholder="Your Message" rows="3" class="m-3"></textarea>
+          <!-- End of Text Feedback -->
+
+          <!-- Modal The Footer-->
+          <div class="modal-footer">
+            <!-- Send button -->
+            <a href="" class="btn btn-success">Send Review
+            </a>
+            <!-- Cancel button -->
+            <a href="" class="btn btn-outline-success" data-dismiss="modal">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="p-5 bg-dark text-white text-center position-relative">
+   <!-- Grid container -->
+   <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" >ISTUDYBUD</a>
+  </div>
+  <!-- Copyright -->
+
+    <!-- <div class="container">
+      <p class="lead">Copyright &copy;</p>
+
+      <a href="#home" class="position-absolute bottom-0 end-0 p-5 text-light" data-aos="zoom-in-up"><i
+          class="bi bi-arrow-up-circle h1"></i></a>
+    </div> -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
